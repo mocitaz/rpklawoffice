@@ -339,62 +339,6 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* 6. The Partners Roster Showcase */}
-      <section className="section about-roster-section">
-        <Container>
-          <div className="roster-head-row">
-            <div>
-              <span className="sub-kicker">DEWAN ADVOKAT &amp; MITRA</span>
-              <h2 className="section-title-dossier">Para Profesional di Balik Firma</h2>
-            </div>
-            <Link href="/tim" className="roster-view-all">
-              <span>Lihat Seluruh Tim</span>
-              <ArrowRight size={14} />
-            </Link>
-          </div>
-
-          <div className="roster-cards-grid">
-            {team.map((member, i) => (
-              <article key={member.slug} className="roster-dossier-card">
-                <Link href={`/tim/${member.slug}`} className="roster-portrait-link">
-                  <div className="roster-portrait-box">
-                    <Image
-                      src={member.portrait}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      alt={member.fullName}
-                      className="roster-portrait-img"
-                    />
-                    <span className="roster-index-tag">0{i + 1}</span>
-                  </div>
-                </Link>
-
-                <div className="roster-body-box">
-                  <span className="roster-role-tag">{member.role}</span>
-                  <h3 className="roster-name-heading">
-                    <Link href={`/tim/${member.slug}`}>{member.fullName}</Link>
-                  </h3>
-                  <p className="roster-bio-text">{member.shortBio}</p>
-
-                  <div className="roster-pills-row">
-                    {member.practiceAreas.slice(0, 2).map((pa) => (
-                      <span key={pa} className="roster-pill">
-                        {pa}
-                      </span>
-                    ))}
-                  </div>
-
-                  <Link href={`/tim/${member.slug}`} className="roster-action-btn">
-                    <span>Lihat Profil &amp; CV Lengkap</span>
-                    <ArrowRight size={13} />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       <ConsultationCTA />
     </div>
   );
