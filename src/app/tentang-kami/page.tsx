@@ -3,18 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  ShieldCheck,
   Scale,
   Building2,
   CheckCircle2,
   FileCheck,
   Lock,
   ArrowUpRight,
-  Award,
 } from "lucide-react";
 import { Container, Breadcrumb } from "@/components/ui";
 import { ConsultationCTA } from "@/components/consultation-cta";
-import { siteConfig } from "@/data/site";
 import { team } from "@/data/team";
 
 export const metadata: Metadata = {
@@ -28,58 +25,70 @@ export default function AboutPage() {
 
   return (
     <div className="about-dossier-page">
-      {/* 1. Grand Hero & Architecture Spread */}
-      <section className="about-grand-hero">
-        <Container>
-          <Breadcrumb
-            items={[
-              { label: "Beranda", href: "/" },
-              { label: "Tentang Kami" },
-            ]}
+      {/* 1. Cinematic Institutional Hero */}
+      <section className="about-cinematic-hero">
+        <div className="hero-backdrop">
+          <Image
+            src="/images/about/monument.jpg"
+            fill
+            priority
+            sizes="100vw"
+            alt="Arsitektur Monumental Institusi Hukum RPK Law Office"
+            className="hero-bg-image"
           />
+          <div className="hero-cinematic-scrim" />
+        </div>
 
-          <div className="grand-hero-grid">
-            <div className="grand-hero-lead">
-              <span className="hero-kicker-tag">PROFIL KELEMBAGAAN FIRMA</span>
-              <h1 className="grand-hero-title">
-                Presisi Yuridis. <br />
-                <em>Integritas Tanpa Kompromi.</em>
-              </h1>
-              <p className="grand-hero-summary">
-                RPK Law Office beroperasi sebagai firma hukum butik yang memadukan ketajaman analisis hukum, kematangan beracara di ruang sidang, dan pemahaman komersial strategis untuk melindungi kepentingan terbaik klien.
-              </p>
+        <Container className="about-hero-inner">
+          <div className="about-hero-top-nav">
+            <Breadcrumb
+              items={[
+                { label: "Beranda", href: "/" },
+                { label: "Tentang Kami" },
+              ]}
+            />
+          </div>
 
-              <div className="hero-metrics-bar">
-                <div className="metric-pill">
-                  <Building2 size={15} />
-                  <span>Firma Advokat &amp; Konsultan</span>
-                </div>
-                <div className="metric-pill">
-                  <ShieldCheck size={15} />
-                  <span>Kerahasiaan 100% Terjamin</span>
-                </div>
-                <div className="metric-pill">
-                  <Award size={15} />
-                  <span>Lisensi Resmi PERADI</span>
-                </div>
-              </div>
+          <div className="about-hero-lead-box">
+            <div className="about-hero-micro-label">
+              <span className="label-line" />
+              <span>RPK LAW OFFICE · PROFIL KELEMBAGAAN</span>
             </div>
 
-            <div className="grand-hero-visual">
-              <div className="visual-media-box">
-                <Image
-                  src={siteConfig.images.office}
-                  fill
-                  priority
-                  alt="Ruang Kerja & Rapat Eksekutif RPK Law Office"
-                  sizes="(max-width: 992px) 100vw, 520px"
-                  className="visual-media-img"
-                />
-                <div className="visual-media-overlay">
-                  <span className="overlay-badge-tag">KANTOR &amp; RUANG KONSULTASI</span>
-                  <p className="overlay-badge-text">Bandung · Jawa Barat, Indonesia</p>
-                </div>
-              </div>
+            <h1 className="about-hero-main-title">
+              Presisi Yuridis. <br />
+              <em>Integritas Tanpa Kompromi.</em>
+            </h1>
+
+            <p className="about-hero-lead-desc">
+              RPK Law Office didirikan di atas fondasi ketelitian analisis, transparansi komunikasi, dan dedikasi penuh pada kepastian hukum guna melindungi setiap kepentingan strategis klien.
+            </p>
+
+            <div className="about-hero-actions">
+              <Link href="/kontak" className="about-hero-btn-primary">
+                <span>Jadwalkan Konsultasi</span>
+                <ArrowUpRight size={14} />
+              </Link>
+              <Link href="/area-praktik" className="about-hero-btn-outline">
+                <span>Lihat Area Praktik</span>
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+
+          {/* Bottom Facts Bar */}
+          <div className="about-hero-bottom-bar">
+            <div className="about-hero-pills">
+              <span>01 Lisensi Resmi PERADI</span>
+              <span className="dot-sep" />
+              <span>02 Kerahasiaan 100% (Privilege)</span>
+              <span className="dot-sep" />
+              <span>03 Pendekatan Butik Personal</span>
+            </div>
+
+            <div className="about-hero-location">
+              <span className="live-dot" />
+              <span>Bandung · Jawa Barat</span>
             </div>
           </div>
         </Container>
