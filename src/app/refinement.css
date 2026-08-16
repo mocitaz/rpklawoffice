@@ -1464,157 +1464,277 @@ body {
 }
 
 /* ==========================================================================
-   Firm Institutional Profile & Legal Manifesto (/tentang-kami)
+   Firm Institutional Profile & Legal Manifesto Dossier (/tentang-kami)
    ========================================================================== */
 
-.about-hero-section {
-  padding: 148px 0 64px;
+.about-dossier-page {
+  background: #ffffff;
+}
+
+/* 1. Grand Hero & Architecture Spread */
+.about-grand-hero {
+  padding: 148px 0 72px;
   background: #fbfbfa;
   border-bottom: 1px solid var(--line);
 }
 
-.about-hero-header {
+.grand-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.98fr);
+  gap: 56px;
+  align-items: center;
   margin-top: 24px;
-  max-width: 860px;
 }
 
-.about-kicker {
+.grand-hero-lead {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-kicker-tag {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ink);
   display: inline-block;
   padding-bottom: 4px;
   border-bottom: 2px solid var(--ink);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  align-self: flex-start;
 }
 
-.about-main-heading {
+.grand-hero-title {
   font-family: var(--serif);
-  font-size: clamp(38px, 4.5vw, 56px);
+  font-size: clamp(38px, 4.4vw, 56px);
   font-weight: 400;
-  line-height: 1.12;
+  line-height: 1.1;
   letter-spacing: -0.035em;
   color: var(--ink);
-  margin: 0 0 16px;
+  margin: 0 0 20px;
 }
 
-.about-main-heading em {
+.grand-hero-title em {
   font-style: italic;
   color: #374151;
   font-weight: 400;
 }
 
-.about-hero-desc {
-  font-size: 16px;
+.grand-hero-summary {
+  font-size: 15.5px;
   line-height: 1.75;
   color: var(--muted);
-  margin: 0;
-  max-width: 720px;
+  margin: 0 0 32px;
+  max-width: 620px;
 }
 
-/* 2. Executive Managing Partner Statement */
-.partner-statement-section {
-  padding: 96px 0;
+.hero-metrics-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.metric-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.metric-pill svg {
+  color: #4b5563;
+}
+
+.grand-hero-visual {
+  width: 100%;
+}
+
+.visual-media-box {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 40px rgba(13, 19, 31, 0.08);
+}
+
+.visual-media-img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.visual-media-overlay {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  padding: 12px 16px;
+  background: rgba(13, 19, 31, 0.88);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-badge-tag {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #d1d5db;
+}
+
+.overlay-badge-text {
+  font-family: var(--serif);
+  font-size: 13.5px;
+  color: #ffffff;
+  margin: 2px 0 0;
+}
+
+/* Common Section Headers */
+.section-head-minimal {
+  margin-bottom: 36px;
+}
+
+.section-head-center {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+
+.sub-kicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--ink);
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.section-title-dossier {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.section-desc-dossier {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* 2. Executive Leadership & Partner Statement */
+.about-leadership-section {
+  padding: 88px 0 96px;
   background: #ffffff;
 }
 
-.partner-statement-deck {
+.leadership-dossier-card {
   display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 56px;
+  grid-template-columns: 320px 1fr;
+  gap: 52px;
   background: #fbfbfa;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   padding: 44px;
-  align-items: center;
+  align-items: start;
 }
 
-.statement-portrait-wrap {
+.partner-portrait-col {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
-.statement-portrait-frame {
+.portrait-aspect-frame {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 360px;
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: #e5e7eb;
   border: 1px solid var(--line);
 }
 
-.statement-portrait-img {
+.portrait-aspect-img {
   object-fit: cover;
   object-position: top center;
-  filter: contrast(1.03);
 }
 
-.statement-partner-badge {
+.partner-dossier-meta {
   display: flex;
   flex-direction: column;
-  gap: 2px;
 }
 
-.statement-partner-badge strong {
+.partner-meta-name {
   font-family: var(--serif);
-  font-size: 16.5px;
+  font-size: 17px;
   font-weight: 600;
   color: var(--ink);
+  margin: 0 0 2px;
 }
 
-.statement-partner-badge span {
-  font-size: 11.5px;
+.partner-meta-role {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #4b5563;
+}
+
+.partner-meta-firm {
+  font-size: 11px;
   color: var(--muted);
-  font-weight: 500;
 }
 
-.statement-copy-wrap {
+.partner-quote-col {
   display: flex;
   flex-direction: column;
 }
 
-.statement-top-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #4b5563;
-  margin-bottom: 18px;
-}
-
-.statement-quote {
+.leadership-manifesto-quote {
   font-family: var(--serif);
-  font-size: clamp(20px, 2.2vw, 27px);
-  line-height: 1.38;
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.4;
   font-style: italic;
   color: var(--ink);
-  margin: 0 0 20px;
-  padding: 0 0 20px;
+  margin: 0 0 22px;
+  padding: 0 0 22px;
   border-bottom: 1px solid var(--line);
 }
 
-.statement-text {
+.leadership-paragraphs p {
   font-size: 14.5px;
-  line-height: 1.75;
+  line-height: 1.8;
   color: #4b5563;
-  margin: 0 0 28px;
+  margin: 0 0 16px;
 }
 
-.statement-actions {
+.leadership-footer-actions {
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-top: 14px;
   flex-wrap: wrap;
 }
 
-.statement-btn-link {
+.btn-dossier-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1631,12 +1751,12 @@ body {
   transition: all 0.2s ease;
 }
 
-.statement-btn-link:hover {
+.btn-dossier-primary:hover {
   background: #242c3b;
   transform: translateY(-1px);
 }
 
-.statement-btn-consult {
+.btn-dossier-secondary {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1654,60 +1774,25 @@ body {
   transition: all 0.2s ease;
 }
 
-.statement-btn-consult:hover {
+.btn-dossier-secondary:hover {
   border-color: #94a3b8;
   background: var(--warm);
 }
 
-/* 3. Firm Governance & Credentials Grid */
-.firm-credentials-section {
+/* 3. Governance & Legal Credentials Grid */
+.about-governance-section {
   padding: 88px 0 96px;
   background: #fbfbfa;
   border-top: 1px solid var(--line);
 }
 
-.credentials-section-header {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 48px;
-}
-
-.credentials-kicker {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink);
-  padding-bottom: 4px;
-  border-bottom: 2px solid var(--ink);
-  display: inline-block;
-  margin-bottom: 14px;
-}
-
-.credentials-title {
-  font-family: var(--serif);
-  font-size: clamp(28px, 3.2vw, 38px);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-  margin: 0 0 12px;
-}
-
-.credentials-subtitle {
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: var(--muted);
-  margin: 0;
-}
-
-.credentials-grid-four {
+.governance-matrix-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-.credential-card {
+.gov-matrix-card {
   padding: 28px 24px;
   background: #ffffff;
   border: 1px solid var(--line);
@@ -1717,15 +1802,22 @@ body {
   transition: all 0.2s ease;
 }
 
-.credential-card:hover {
+.gov-matrix-card:hover {
   border-color: #94a3b8;
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(13, 19, 31, 0.05);
 }
 
-.cred-card-icon {
-  width: 42px;
-  height: 42px;
+.gov-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.gov-icon-box {
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-sm);
   background: #f3f4f6;
   border: 1px solid var(--line);
@@ -1733,10 +1825,16 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--ink);
-  margin-bottom: 18px;
 }
 
-.cred-card-tag {
+.gov-index {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.gov-label {
   font-size: 8.5px;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -1746,71 +1844,36 @@ body {
   display: block;
 }
 
-.cred-card-title {
+.gov-title {
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 17.5px;
   font-weight: 500;
   color: var(--ink);
   margin: 0 0 10px;
   line-height: 1.3;
 }
 
-.cred-card-desc {
+.gov-text {
   font-size: 13px;
   line-height: 1.62;
   color: var(--muted);
   margin: 0;
 }
 
-/* 4. Tiga Pilar Keunggulan Komparatif */
-.why-choose-section {
+/* 4. Strategic Differentiators */
+.about-differentiators-section {
   padding: 88px 0 96px;
   background: #ffffff;
   border-top: 1px solid var(--line);
 }
 
-.why-section-header {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 48px;
-}
-
-.why-kicker {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink);
-  padding-bottom: 4px;
-  border-bottom: 2px solid var(--ink);
-  display: inline-block;
-  margin-bottom: 14px;
-}
-
-.why-title {
-  font-family: var(--serif);
-  font-size: clamp(28px, 3.2vw, 38px);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-  margin: 0 0 12px;
-}
-
-.why-subtitle {
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: var(--muted);
-  margin: 0;
-}
-
-.why-cards-grid {
+.differentiators-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-.why-card {
+.diff-card {
   padding: 34px 30px;
   background: #fbfbfa;
   border: 1px solid var(--line);
@@ -1820,50 +1883,53 @@ body {
   transition: all 0.2s ease;
 }
 
-.why-card:hover {
+.diff-card:hover {
   border-color: #94a3b8;
   transform: translateY(-2px);
   background: #ffffff;
   box-shadow: 0 12px 28px rgba(13, 19, 31, 0.06);
 }
 
-.why-number {
-  font-family: var(--serif);
-  font-size: 32px;
-  font-weight: 700;
-  color: #94a3b8;
-  line-height: 1;
-  margin-bottom: 18px;
+.diff-card-top {
+  margin-bottom: 14px;
 }
 
-.why-card-name {
+.diff-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6b7280;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.diff-title {
   font-family: var(--serif);
   font-size: 20px;
   font-weight: 500;
   color: var(--ink);
-  margin: 0 0 12px;
+  margin: 0;
   line-height: 1.35;
 }
 
-.why-card-desc {
+.diff-desc {
   font-size: 13.5px;
   line-height: 1.68;
   color: var(--muted);
   margin: 0 0 20px;
 }
 
-.why-points-list {
-  list-style: none;
-  padding: 0;
-  margin: auto 0 0;
+.diff-checklist {
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border-top: 1px solid var(--line);
-  padding-top: 16px;
 }
 
-.why-points-list li {
+.check-row {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1872,283 +1938,116 @@ body {
   color: #374151;
 }
 
-.why-points-list li svg {
+.check-row svg {
   color: #059669;
   flex-shrink: 0;
 }
 
-/* 5. About Institutional Overview */
-.about-overview-section {
+/* 5. Core Values Compact Spread */
+.about-values-compact {
   padding: 88px 0 96px;
   background: #fbfbfa;
   border-top: 1px solid var(--line);
 }
 
-.about-split-layout {
+.values-compact-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
   gap: 56px;
   align-items: start;
-  margin-bottom: 64px;
 }
 
-.overview-tag {
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #6b7280;
-  display: block;
-  margin-bottom: 12px;
+.values-compact-lead {
+  display: flex;
+  flex-direction: column;
 }
 
-.overview-heading {
-  font-family: var(--serif);
-  font-size: clamp(28px, 3.2vw, 40px);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: var(--ink);
+.values-compact-p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
   margin: 0 0 24px;
 }
 
-.overview-quote {
-  font-family: var(--serif);
-  font-size: 16.5px;
-  line-height: 1.6;
-  font-style: italic;
-  color: #4b5563;
-  margin: 0;
-  padding: 20px 24px;
-  background: #ffffff;
-  border-left: 3px solid var(--ink);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--line);
-  border-left-width: 3px;
-  border-left-color: var(--ink);
-}
-
-.about-split-right p {
-  font-size: 15px;
-  line-height: 1.8;
-  color: #374151;
-  margin-bottom: 18px;
-}
-
-.overview-action-row {
-  display: flex;
-  gap: 14px;
-  margin-top: 28px;
-}
-
-.overview-btn-team {
-  display: inline-flex;
-  align-items: center;
-  padding: 0 20px;
-  height: 44px;
-  background: var(--ink);
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border-radius: var(--radius-sm);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.overview-btn-team:hover {
-  background: #252e3d;
-  transform: translateY(-1px);
-}
-
-.overview-btn-practices {
+.values-explore-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 0 18px;
-  height: 44px;
-  background: #ffffff;
-  border: 1px solid var(--line);
-  color: var(--ink);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  border-radius: var(--radius-sm);
+  color: var(--ink);
   text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--ink);
+  align-self: flex-start;
   transition: all 0.2s ease;
 }
 
-.overview-btn-practices:hover {
-  background: var(--warm);
-  border-color: #94a3b8;
+.values-explore-link:hover {
+  color: #4b5563;
+  border-color: #4b5563;
 }
 
-/* Visual Frame */
-.about-visual-frame {
-  position: relative;
-  width: 100%;
-  height: 440px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: 0 16px 40px rgba(13, 19, 31, 0.08);
-}
-
-.about-visual-img {
-  object-fit: cover;
-  object-position: center;
-}
-
-.visual-caption-badge {
-  position: absolute;
-  bottom: 18px;
-  left: 18px;
-  padding: 8px 16px;
-  background: rgba(13, 19, 31, 0.85);
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 600;
-  border-radius: var(--radius-sm);
-  backdrop-filter: blur(8px);
-}
-
-/* 6. Four Values Section */
-.about-values-section {
-  padding: 88px 0 96px;
-  background: #ffffff;
-  border-top: 1px solid var(--line);
-}
-
-.values-section-header {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 48px;
-}
-
-.values-kicker {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink);
-  padding-bottom: 4px;
-  border-bottom: 2px solid var(--ink);
-  display: inline-block;
-  margin-bottom: 14px;
-}
-
-.values-title {
-  font-family: var(--serif);
-  font-size: clamp(28px, 3.2vw, 38px);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-  margin: 0 0 12px;
-}
-
-.values-subtitle {
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: var(--muted);
-  margin: 0;
-}
-
-.values-cards-grid {
+.values-compact-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
-.value-card {
-  padding: 32px 30px;
-  background: #fbfbfa;
+.val-item {
+  padding: 24px 22px;
+  background: #ffffff;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   display: flex;
   flex-direction: column;
-  transition: all 0.2s ease;
 }
 
-.value-card:hover {
-  border-color: #94a3b8;
-  transform: translateY(-2px);
-  background: #ffffff;
-  box-shadow: 0 10px 24px rgba(13, 19, 31, 0.05);
-}
-
-.value-card-header {
+.val-head {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 18px;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
-.value-num {
+.val-num {
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
   color: #94a3b8;
 }
 
-.value-icon {
-  color: var(--ink);
-}
-
-.value-name {
+.val-head strong {
   font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 16.5px;
+  font-weight: 600;
   color: var(--ink);
-  margin: 0 0 10px;
 }
 
-.value-desc {
-  font-size: 13.5px;
-  line-height: 1.65;
+.val-item p {
+  font-size: 12.5px;
+  line-height: 1.6;
   color: var(--muted);
   margin: 0;
 }
 
-/* 7. Mini Partner Roster Preview */
-.about-team-roster-section {
+/* 6. Partner Roster Section */
+.about-roster-section {
   padding: 88px 0 96px;
-  background: #fbfbfa;
+  background: #ffffff;
   border-top: 1px solid var(--line);
 }
 
-.roster-section-header {
+.roster-head-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 44px;
 }
 
-.roster-kicker {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink);
-  padding-bottom: 4px;
-  border-bottom: 2px solid var(--ink);
-  display: inline-block;
-  margin-bottom: 12px;
-}
-
-.roster-section-title {
-  font-family: var(--serif);
-  font-size: clamp(28px, 3.2vw, 38px);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-  margin: 0;
-}
-
-.roster-all-link {
+.roster-view-all {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -2163,18 +2062,18 @@ body {
   transition: all 0.2s ease;
 }
 
-.roster-all-link:hover {
+.roster-view-all:hover {
   color: #4b5563;
   border-color: #4b5563;
 }
 
-.about-team-grid {
+.roster-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
 
-.about-partner-card {
+.roster-dossier-card {
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
@@ -2184,25 +2083,30 @@ body {
   transition: all 0.2s ease;
 }
 
-.about-partner-card:hover {
+.roster-dossier-card:hover {
   border-color: #94a3b8;
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(13, 19, 31, 0.06);
 }
 
-.about-partner-img-link {
+.roster-portrait-link {
   display: block;
   text-decoration: none;
 }
 
-.about-partner-portrait {
+.roster-portrait-box {
   position: relative;
   width: 100%;
   height: 320px;
   background: #f3f4f6;
 }
 
-.partner-idx-tag {
+.roster-portrait-img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.roster-index-tag {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -2215,14 +2119,14 @@ body {
   backdrop-filter: blur(6px);
 }
 
-.about-partner-info {
+.roster-body-box {
   padding: 24px 22px 26px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.about-partner-role {
+.roster-role-tag {
   font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -2231,7 +2135,7 @@ body {
   margin-bottom: 6px;
 }
 
-.about-partner-name {
+.roster-name-heading {
   font-family: var(--serif);
   font-size: 18.5px;
   font-weight: 600;
@@ -2239,17 +2143,17 @@ body {
   margin: 0 0 10px;
 }
 
-.about-partner-name a {
+.roster-name-heading a {
   color: var(--ink);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.about-partner-name a:hover {
+.roster-name-heading a:hover {
   color: #4b5563;
 }
 
-.about-partner-bio {
+.roster-bio-text {
   font-size: 13px;
   line-height: 1.6;
   color: var(--muted);
@@ -2260,14 +2164,14 @@ body {
   overflow: hidden;
 }
 
-.about-partner-pills {
+.roster-pills-row {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 20px;
 }
 
-.about-pill {
+.roster-pill {
   font-size: 10.5px;
   font-weight: 500;
   color: #4b5563;
@@ -2277,7 +2181,7 @@ body {
   border-radius: 9999px;
 }
 
-.about-partner-btn {
+.roster-action-btn {
   margin-top: auto;
   display: inline-flex;
   align-items: center;
@@ -2296,7 +2200,7 @@ body {
   transition: all 0.2s ease;
 }
 
-.about-partner-btn:hover {
+.roster-action-btn:hover {
   background: var(--ink);
   color: #ffffff;
   border-color: var(--ink);
@@ -4683,30 +4587,39 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .about-split-layout {
+  .grand-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .visual-media-box {
+    height: 320px;
+  }
+
+  .leadership-dossier-card {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 32px 28px;
+  }
+
+  .portrait-aspect-frame {
+    height: 320px;
+  }
+
+  .governance-matrix-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .differentiators-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-compact-layout {
     grid-template-columns: 1fr;
     gap: 36px;
   }
 
-  .partner-statement-deck {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 32px 28px;
-  }
-
-  .statement-portrait-frame {
-    height: 340px;
-  }
-
-  .credentials-grid-four {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .why-cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-team-grid {
+  .roster-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -5155,126 +5068,99 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .about-hero-section {
-    padding: 112px 0 44px;
+  .about-grand-hero {
+    padding: 112px 0 48px;
   }
 
-  .about-main-heading {
+  .grand-hero-title {
     font-size: 32px;
   }
 
-  .about-hero-desc {
+  .grand-hero-summary {
     font-size: 14px;
+    margin-bottom: 24px;
   }
 
-  .partner-statement-section {
+  .visual-media-box {
+    height: 240px;
+  }
+
+  .about-leadership-section {
     padding: 56px 0;
   }
 
-  .partner-statement-deck {
+  .leadership-dossier-card {
     padding: 24px 20px;
     gap: 24px;
   }
 
-  .statement-portrait-frame {
+  .portrait-aspect-frame {
     height: 280px;
   }
 
-  .statement-quote {
+  .leadership-manifesto-quote {
     font-size: 19px;
   }
 
-  .statement-text {
+  .leadership-paragraphs p {
     font-size: 13.5px;
-    margin-bottom: 22px;
   }
 
-  .statement-actions {
+  .leadership-footer-actions {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .statement-btn-link,
-  .statement-btn-consult {
+  .btn-dossier-primary,
+  .btn-dossier-secondary {
     justify-content: center;
     width: 100%;
   }
 
-  .firm-credentials-section {
+  .about-governance-section {
     padding: 56px 0;
   }
 
-  .credentials-grid-four {
+  .governance-matrix-grid {
     grid-template-columns: 1fr;
   }
 
-  .why-choose-section {
+  .about-differentiators-section {
     padding: 56px 0;
   }
 
-  .why-cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .why-card {
+  .diff-card {
     padding: 24px 20px;
   }
 
-  .about-overview-section {
+  .about-values-compact {
     padding: 56px 0;
   }
 
-  .overview-heading {
-    font-size: 26px;
+  .values-compact-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
-  .overview-quote {
-    font-size: 14.5px;
-    padding: 16px 18px;
-  }
-
-  .overview-action-row {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .overview-btn-team,
-  .overview-btn-practices {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .about-visual-frame {
-    height: 260px;
-  }
-
-  .about-values-section {
-    padding: 56px 0;
-  }
-
-  .values-cards-grid {
+  .values-compact-grid {
     grid-template-columns: 1fr;
   }
 
-  .value-card {
-    padding: 24px 20px;
-  }
-
-  .about-team-roster-section {
+  .about-roster-section {
     padding: 56px 0;
   }
 
-  .roster-section-header {
+  .roster-head-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
   }
 
-  .about-team-grid {
+  .roster-cards-grid {
     grid-template-columns: 1fr;
   }
 
-  .about-partner-portrait {
-    height: 300px;
+  .roster-portrait-box {
+    height: 290px;
   }
 }
