@@ -1687,116 +1687,277 @@ body {
   margin: 0;
 }
 
-/* 2. Executive Leadership & Partner Statement */
+/* 2. Executive Leadership & Partner Statement — Eye-Catching Manifesto Spread */
 .about-leadership-section {
-  padding: 88px 0 96px;
+  padding: 96px 0;
   background: #ffffff;
 }
 
-.leadership-dossier-card {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 52px;
+.leadership-manifesto-spread {
   background: #fbfbfa;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 44px;
+  border: 1px solid #e8e8e6;
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  box-shadow: 0 16px 40px rgba(13, 19, 31, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.manifesto-card-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 56px;
   align-items: start;
 }
 
-.partner-portrait-col {
+.manifesto-partner-col {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 20px;
 }
 
-.portrait-aspect-frame {
+.partner-portrait-frame-lux {
   position: relative;
   width: 100%;
-  height: 360px;
-  border-radius: var(--radius-sm);
+  height: 380px;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  background: #e5e7eb;
-  border: 1px solid var(--line);
+  background: #141512;
+  border: 1px solid #dededc;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-.portrait-aspect-img {
+.partner-portrait-lux-img {
   object-fit: cover;
   object-position: top center;
+  transition: transform 0.4s ease;
 }
 
-.partner-dossier-meta {
+.partner-portrait-frame-lux:hover .partner-portrait-lux-img {
+  transform: scale(1.03);
+}
+
+.partner-frame-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  padding: 10px 14px;
+  background: rgba(15, 16, 13, 0.88);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
-  flex-direction: column;
-}
-
-.partner-meta-name {
-  font-family: var(--serif);
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--ink);
-  margin: 0 0 2px;
-}
-
-.partner-meta-role {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #4b5563;
-}
-
-.partner-meta-firm {
-  font-size: 11px;
-  color: var(--muted);
-}
-
-.partner-quote-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.leadership-manifesto-quote {
-  font-family: var(--serif);
-  font-size: clamp(20px, 2.2vw, 26px);
-  line-height: 1.4;
-  font-style: italic;
-  color: var(--ink);
-  margin: 0 0 22px;
-  padding: 0 0 22px;
-  border-bottom: 1px solid var(--line);
-}
-
-.leadership-paragraphs p {
-  font-size: 14.5px;
-  line-height: 1.8;
-  color: #4b5563;
-  margin: 0 0 16px;
-}
-
-.leadership-footer-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 14px;
-  flex-wrap: wrap;
-}
-
-.btn-dossier-primary {
-  display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 0 20px;
-  height: 44px;
-  background: var(--ink);
-  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #dec797;
+  text-transform: uppercase;
+}
+
+.partner-frame-badge .badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9ae77;
+}
+
+.partner-lux-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.partner-lux-name {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+
+.partner-lux-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #4b5563;
+  margin: 0;
+}
+
+.partner-credentials-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip-item {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  color: #374151;
+}
+
+.partner-cv-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius-sm);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border-radius: var(--radius-sm);
+  color: var(--ink);
   text-decoration: none;
   transition: all 0.2s ease;
+  margin-top: 4px;
+}
+
+.partner-cv-link-btn:hover {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.manifesto-content-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.manifesto-kicker-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.manifesto-kicker-line {
+  width: 20px;
+  height: 2px;
+  background: #c9ae77;
+}
+
+.manifesto-kicker-text {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9ae77;
+}
+
+.manifesto-main-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.2vw, 36px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0 0 20px;
+}
+
+.manifesto-quote-gold {
+  font-family: var(--serif);
+  font-size: clamp(19px, 2.1vw, 24px);
+  line-height: 1.45;
+  font-style: italic;
+  color: #1f2937;
+  margin: 0 0 20px;
+  padding: 0 0 20px 20px;
+  border-left: 3px solid #c9ae77;
+}
+
+.manifesto-narrative {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #4b5563;
+  margin: 0 0 28px;
+}
+
+.manifesto-commitment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.commitment-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.commitment-card:hover {
+  border-color: #c9ae77;
+  transform: translateY(-2px);
+}
+
+.commitment-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.commitment-num {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 700;
+  color: #c9ae77;
+}
+
+.commitment-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+.commitment-text {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: #6b7280;
+  margin: 0;
+}
+
+.manifesto-action-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.manifesto-btn-gold {
+  height: 46px;
+  padding: 0 22px;
+  background: #c9ae77 !important;
+  border-color: #c9ae77 !important;
+  color: #141512 !important;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-sm);
+}
+
+.manifesto-link-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.manifesto-link-explore:hover {
+  color: #c9ae77;
 }
 
 .btn-dossier-primary:hover {
@@ -4640,18 +4801,13 @@ body {
     gap: 40px;
   }
 
-  .visual-media-box {
-    height: 320px;
-  }
-
-  .leadership-dossier-card {
+  .manifesto-card-grid {
     grid-template-columns: 1fr;
     gap: 36px;
-    padding: 32px 28px;
   }
 
-  .portrait-aspect-frame {
-    height: 320px;
+  .leadership-manifesto-spread {
+    padding: 32px 28px;
   }
 
   .governance-matrix-grid {
@@ -5172,32 +5328,41 @@ body {
     padding: 56px 0;
   }
 
-  .leadership-dossier-card {
-    padding: 24px 20px;
-    gap: 24px;
+  .leadership-manifesto-spread {
+    padding: 24px 18px;
   }
 
-  .portrait-aspect-frame {
-    height: 280px;
+  .manifesto-card-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
-  .leadership-manifesto-quote {
-    font-size: 19px;
+  .partner-portrait-frame-lux {
+    height: 320px;
   }
 
-  .leadership-paragraphs p {
-    font-size: 13.5px;
+  .manifesto-quote-gold {
+    font-size: 18px;
+    padding-left: 14px;
   }
 
-  .leadership-footer-actions {
+  .manifesto-commitment-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .manifesto-action-bar {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .btn-dossier-primary,
-  .btn-dossier-secondary {
-    justify-content: center;
+  .manifesto-btn-gold {
     width: 100%;
+    justify-content: center;
+  }
+
+  .manifesto-link-explore {
+    justify-content: center;
   }
 
   .about-governance-section {

@@ -84,52 +84,96 @@ export default function AboutPage() {
       {/* 2. Executive Leadership & Partner Statement */}
       <section className="section about-leadership-section">
         <Container>
-          <div className="section-head-minimal">
-            <span className="sub-kicker">KEPEMIMPINAN &amp; FILOSOFI ADVOKASI</span>
-            <h2 className="section-title-dossier">Pernyataan Managing Partner</h2>
-          </div>
+          <div className="leadership-manifesto-spread">
+            <div className="manifesto-card-grid">
+              {/* Left Column: Portrait & Credentials */}
+              <div className="manifesto-partner-col">
+                <div className="partner-portrait-frame-lux">
+                  <Image
+                    src={managingPartner.portrait}
+                    fill
+                    alt={`Potret resmi ${managingPartner.fullName}`}
+                    sizes="(max-width: 768px) 100vw, 400px"
+                    className="partner-portrait-lux-img"
+                  />
+                  <div className="partner-frame-badge">
+                    <span className="badge-dot" />
+                    <span>MANAGING PARTNER</span>
+                  </div>
+                </div>
 
-          <div className="leadership-dossier-card">
-            <div className="partner-portrait-col">
-              <div className="portrait-aspect-frame">
-                <Image
-                  src={managingPartner.portrait}
-                  fill
-                  alt={`Potret resmi ${managingPartner.fullName}`}
-                  sizes="(max-width: 768px) 100vw, 360px"
-                  className="portrait-aspect-img"
-                />
+                <div className="partner-lux-meta">
+                  <h3 className="partner-lux-name">{managingPartner.fullName}</h3>
+                  <p className="partner-lux-desc">
+                    Memimpin arah strategis firma dengan fokus pada mitigasi risiko, litigasi perdata, dan pendampingan komersial klien korporasi maupun perorangan.
+                  </p>
+                  
+                  <div className="partner-credentials-chips">
+                    <span className="chip-item">Advokat PERADI</span>
+                    <span className="chip-item">Pengadilan Tinggi</span>
+                    <span className="chip-item">Bandung</span>
+                  </div>
+
+                  <Link href={`/tim/${managingPartner.slug}`} className="partner-cv-link-btn">
+                    <span>Lihat Rekam Jejak &amp; CV Lengkap</span>
+                    <ArrowRight size={14} />
+                  </Link>
+                </div>
               </div>
-              <div className="partner-dossier-meta">
-                <h3 className="partner-meta-name">{managingPartner.fullName}</h3>
-                <span className="partner-meta-role">{managingPartner.role}</span>
-                <span className="partner-meta-firm">RPK Law Office</span>
-              </div>
-            </div>
 
-            <div className="partner-quote-col">
-              <blockquote className="leadership-manifesto-quote">
-                “Tidak ada ruang untuk spekulasi dalam nasihat hukum. Setiap langkah harus berpijak pada fondasi yuridis yang kokoh dan relevansi komersial yang nyata bagi kelangsungan bisnis klien.”
-              </blockquote>
+              {/* Right Column: Statement & Commitment Pillars */}
+              <div className="manifesto-content-col">
+                <div className="manifesto-kicker-row">
+                  <span className="manifesto-kicker-line" />
+                  <span className="manifesto-kicker-text">MANIFESTO KEPEMIMPINAN &amp; FILOSOFI ADVOKASI</span>
+                </div>
 
-              <div className="leadership-paragraphs">
-                <p>
-                  Di RPK Law Office, kami memandang hubungan dengan klien bukan sekadar penanganan perkara per kasus, melainkan kemitraan strategis jangka panjang. Kami memahami bahwa di balik setiap dokumen kontrak, sengketa komersial, maupun transaksi korporasi terdapat reputasi, aset, dan masa depan usaha yang dipertaruhkan.
+                <h2 className="manifesto-main-title">
+                  Komitmen Yuridis Berorientasi Kepastian
+                </h2>
+
+                <blockquote className="manifesto-quote-gold">
+                  “Tidak ada ruang untuk spekulasi dalam nasihat hukum. Setiap langkah harus berpijak pada fondasi yuridis yang kokoh dan relevansi komersial yang nyata bagi kelangsungan bisnis klien.”
+                </blockquote>
+
+                <p className="manifesto-narrative">
+                  Di RPK Law Office, kami memandang hubungan dengan klien sebagai kemitraan strategis jangka panjang. Kami memahami bahwa di balik setiap klausul kontrak, sengketa bisnis, dan transaksi terdapat reputasi serta aset berharga yang harus dijaga.
                 </p>
-                <p>
-                  Oleh karena itu, kami menerapkan standar ketelitian tanpa kompromi: setiap perkara dianalisis secara multidimensi, dikomunikasikan secara transparan tanpa janji semu, dan dikawal langsung oleh Partner pendiri.
-                </p>
-              </div>
 
-              <div className="leadership-footer-actions">
-                <Link href={`/tim/${managingPartner.slug}`} className="btn-dossier-primary">
-                  <span>Lihat Riwayat &amp; Profil Lengkap</span>
-                  <ArrowRight size={14} />
-                </Link>
-                <Link href="/kontak" className="btn-dossier-secondary">
-                  <span>Jadwalkan Konsultasi</span>
-                  <ArrowUpRight size={14} />
-                </Link>
+                {/* 2-Column Commitment Grid */}
+                <div className="manifesto-commitment-grid">
+                  <div className="commitment-card">
+                    <div className="commitment-card-head">
+                      <span className="commitment-num">01</span>
+                      <h4 className="commitment-title">Tanggung Jawab Langsung</h4>
+                    </div>
+                    <p className="commitment-text">
+                      Setiap perkara diarahkan, dirumuskan, dan diawasi langsung oleh Partner penanggung jawab tanpa perantara yang berjarak.
+                    </p>
+                  </div>
+
+                  <div className="commitment-card">
+                    <div className="commitment-card-head">
+                      <span className="commitment-num">02</span>
+                      <h4 className="commitment-title">Nasihat Lugas &amp; Definitif</h4>
+                    </div>
+                    <p className="commitment-text">
+                      Kalkulasi risiko hukum dan komersial disajikan secara transparan tanpa istilah teknis yang ambigu, siap dieksekusi secara nyata.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Action Bar */}
+                <div className="manifesto-action-bar">
+                  <Button href="/kontak" className="manifesto-btn-gold">
+                    <span>Jadwalkan Konsultasi dengan Partner</span>
+                    <ArrowUpRight size={15} />
+                  </Button>
+                  <Link href="/area-praktik" className="manifesto-link-explore">
+                    <span>Eksplorasi Layanan Hukum</span>
+                    <ArrowRight size={14} />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
