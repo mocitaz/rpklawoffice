@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import { LegalPage } from "@/components/legal-page";
+export const metadata:Metadata={title:"Disclaimer"};
+export default function Disclaimer(){return <LegalPage title="Disclaimer" intro="Informasi pada website ini bersifat umum dan tidak menggantikan nasihat hukum untuk keadaan tertentu." sections={[{title:"Bukan nasihat hukum",text:"Konten tidak dimaksudkan sebagai opini atau nasihat hukum dan tidak boleh menjadi satu-satunya dasar pengambilan keputusan."},{title:"Tidak membentuk hubungan profesional",text:"Mengakses website atau mengirim formulir tidak secara otomatis membentuk hubungan advokat dan klien dengan RAF Law Office."},{title:"Akurasi informasi",text:"Konten placeholder sedang menunggu verifikasi. RAF Law Office dapat memperbarui informasi tanpa pemberitahuan terlebih dahulu."}]}/>}

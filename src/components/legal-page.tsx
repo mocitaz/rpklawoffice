@@ -1,0 +1,2 @@
+import { PageHero,Container } from "./ui";
+export function LegalPage({title,intro,sections}:{title:string;intro:string;sections:{title:string;text:string}[]}){return <><PageHero eyebrow="Informasi Legal" title={title} description={intro}/><section className="section legal-page"><Container><div>{sections.map(section=><section key={section.title}><h2>{section.title}</h2><p>{section.text}</p></section>)}</div></Container></section></>}
