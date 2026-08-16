@@ -1689,20 +1689,29 @@ body {
 
 /* 2. Executive Leadership & Partner Statement — Clean Magazine Split */
 .about-partner-editorial {
-  padding: 100px 0;
+  padding: 110px 0;
   background: #ffffff;
   border-bottom: 1px solid var(--line);
 }
 
 .about-partner-editorial .about-split-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: 64px;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: 72px;
   align-items: center;
 }
 
 .about-partner-editorial .media-frame {
-  height: 460px;
+  height: 520px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 40px rgba(13, 19, 31, 0.08);
+  border: 1px solid var(--line);
+  background: #151613;
+}
+
+.about-partner-editorial .media-frame > img {
+  object-fit: cover;
+  object-position: top center;
 }
 
 .btn-dossier-primary:hover {
@@ -5064,6 +5073,10 @@ body {
 
   .about-partner-editorial {
     padding: 64px 0;
+  }
+
+  .about-partner-editorial .media-frame {
+    height: 380px;
   }
 
   .about-governance-section {

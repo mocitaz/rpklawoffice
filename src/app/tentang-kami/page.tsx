@@ -90,7 +90,7 @@ export default function AboutPage() {
                 “Tidak ada ruang untuk spekulasi dalam nasihat hukum. Setiap langkah harus berpijak pada fondasi yuridis yang kokoh dan relevansi komersial yang nyata.”
               </blockquote>
               <p>
-                Di RPK Law Office, kami memandang hubungan dengan klien sebagai kemitraan strategis jangka panjang. Kami memastikan setiap keputusan penting Anda terlindungi dengan analisis yang cermat, komunikasi terbuka, dan kepastian hukum yang teruji.
+                Kami mendampingi setiap keputusan strategis Anda melalui analisis cermat, komunikasi terbuka, dan kepastian hukum yang teruji.
               </p>
               <TextLink href={`/tim/${managingPartner.slug}`}>
                 Profil &amp; Rekam Jejak {managingPartner.fullName}
