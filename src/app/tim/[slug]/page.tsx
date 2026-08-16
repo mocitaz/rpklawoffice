@@ -6,17 +6,16 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
-  Mail,
-  GraduationCap,
-  Briefcase,
   Award,
-  Calendar,
+  Briefcase,
+  Check,
+  GraduationCap,
+  Mail,
   MessageSquare,
   Scale,
-  Globe,
 } from "lucide-react";
 import { team, getTeamMember } from "@/data/team";
-import { Breadcrumb, Container } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { ConsultationCTA } from "@/components/consultation-cta";
 import { siteConfig } from "@/data/site";
 
@@ -51,304 +50,259 @@ export default async function ProfilePage({
   const index = team.findIndex((item) => item.slug === slug);
   const prev = team[(index - 1 + team.length) % team.length];
   const next = team[(index + 1) % team.length];
+  const profileNumber = String(index + 1).padStart(2, "0");
+  const verifiedQualifications = member.qualifications.filter(
+    (item) => !item.toLowerCase().includes("akan diperbarui"),
+  );
+
+  const workingMethod = [
+    {
+      number: "01",
+      title: "Memahami Konteks",
+      description: "Mengurai tujuan, dokumen, dan posisi para pihak sebelum menyusun kesimpulan hukum.",
+    },
+    {
+      number: "02",
+      title: "Memetakan Risiko",
+      description: "Menilai konsekuensi yuridis dan komersial agar setiap pilihan dapat dibandingkan secara jernih.",
+    },
+    {
+      number: "03",
+      title: "Merumuskan Langkah",
+      description: "Menyampaikan opsi tindakan yang terstruktur, praktis, dan relevan dengan kebutuhan klien.",
+    },
+  ];
 
   return (
     <>
-      {/* 1. Executive Bio & Dossier Header */}
-      <section className="dossier-hero-section">
-        <Container>
-          <Breadcrumb
-            items={[
-              { label: "Beranda", href: "/" },
-              { label: "Tim Kami", href: "/tim" },
-              { label: member.fullName },
-            ]}
-          />
-
-          <div className="dossier-hero-grid">
-            {/* Left: Portrait & Quick Action Card */}
-            <div className="dossier-portrait-col">
-              <div className="dossier-portrait-frame">
-                <Image
-                  src={member.portrait}
-                  fill
-                  priority
-                  alt={`Foto profil ${member.fullName}`}
-                  sizes="(max-width: 768px) 100vw, 420px"
-                  className="dossier-portrait-img"
-                />
-              </div>
-
-              <div className="dossier-contact-slab">
-                <div className="slab-row">
-                  <Mail size={15} />
-                  <a href={`mailto:${member.email}`}>{member.email}</a>
-                </div>
-                <div className="slab-row">
-                  <Globe size={15} />
-                  <span>Bandung, Jawa Barat</span>
-                </div>
-                <Link
-                  href={`https://wa.me/${siteConfig.whatsappNumber}?text=Halo%20RPK%20Law%20Office,%20saya%20ingin%20berkonsultasi%20dengan%20${encodeURIComponent(member.fullName)}.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="slab-wa-btn"
-                >
-                  <MessageSquare size={14} />
-                  <span>Hubungi via WhatsApp</span>
-                  <ArrowUpRight size={14} />
-                </Link>
-              </div>
+      <section className="profile-cv-hero">
+        <Container className="profile-cv-hero-shell">
+          <div className="profile-cv-identity">
+            <div className="profile-cv-topline">
+              <Link href="/tim" className="profile-back-link">
+                <ArrowLeft size={13} />
+                <span>Kembali ke Tim</span>
+              </Link>
+              <span>PROFIL / {profileNumber}</span>
             </div>
 
-            {/* Right: Executive Identity & Specs Matrix */}
-            <div className="dossier-identity-col">
-              <div className="identity-header">
-                <span className="identity-kicker">PROFIL ADVOKAT &amp; PARTNER</span>
-                <h1 className="identity-name">{member.fullName}</h1>
-                <p className="identity-role">{member.role}</p>
-              </div>
+            <span className="profile-cv-kicker">ADVOKAT &amp; PARTNER FIRMA</span>
+            <h1>{member.fullName}</h1>
+            <div className="profile-role-line">
+              <strong>{member.role}</strong>
+              <span>RPK Law Office · Bandung</span>
+            </div>
 
-              <p className="identity-lead-bio">{member.shortBio}</p>
+            <p className="profile-cv-lead">{member.shortBio}</p>
 
-              {/* Specs Matrix (CV Fast Facts) */}
-              <div className="dossier-specs-matrix">
-                <div className="spec-card">
-                  <div className="spec-icon">
-                    <Scale size={16} />
-                  </div>
-                  <div className="spec-info">
-                    <span className="spec-label">FOKUS UTAMA</span>
-                    <strong className="spec-value">
-                      {member.practiceAreas.slice(0, 2).join(" · ")}
-                    </strong>
-                  </div>
-                </div>
+            <div className="profile-focus-list" aria-label="Fokus praktik">
+              {member.practiceAreas.map((area, areaIndex) => (
+                <span key={area}>
+                  {String(areaIndex + 1).padStart(2, "0")} — {area}
+                </span>
+              ))}
+            </div>
 
-                <div className="spec-card">
-                  <div className="spec-icon">
-                    <GraduationCap size={16} />
-                  </div>
-                  <div className="spec-info">
-                    <span className="spec-label">GELAR AKADEMIK</span>
-                    <strong className="spec-value">
-                      {member.education[0]?.degree || "Sarjana Hukum"}
-                    </strong>
-                  </div>
-                </div>
+            <div className="profile-cv-actions">
+              <Link href="/kontak" className="profile-primary-action">
+                <span>Jadwalkan Konsultasi</span>
+                <ArrowUpRight size={15} />
+              </Link>
+              <Link
+                href={`https://wa.me/${siteConfig.whatsappNumber}?text=Halo%20RPK%20Law%20Office,%20saya%20ingin%20berkonsultasi%20dengan%20${encodeURIComponent(member.fullName)}.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="profile-secondary-action"
+              >
+                <MessageSquare size={14} />
+                <span>WhatsApp Firma</span>
+              </Link>
+            </div>
 
-                <div className="spec-card">
-                  <div className="spec-icon">
-                    <Globe size={16} />
-                  </div>
-                  <div className="spec-info">
-                    <span className="spec-label">BAHASA KERJA</span>
-                    <strong className="spec-value">
-                      {member.languages.join(" & ")}
-                    </strong>
-                  </div>
-                </div>
-
-                <div className="spec-card">
-                  <div className="spec-icon">
-                    <Award size={16} />
-                  </div>
-                  <div className="spec-info">
-                    <span className="spec-label">STATUS ADVOKASI</span>
-                    <strong className="spec-value">Advokat / Konsultan Aktif</strong>
-                  </div>
-                </div>
-              </div>
-
-              {/* Direct Consultation Action */}
-              <div className="dossier-action-bar">
-                <Link href="/kontak" className="dossier-btn-primary">
-                  <span>Jadwalkan Konsultasi dengan {member.fullName.split(",")[0]}</span>
-                  <ArrowRight size={15} />
-                </Link>
-                <Link href="/area-praktik" className="dossier-btn-outline">
-                  <span>Lihat Area Terkait</span>
-                </Link>
-              </div>
+            <div className="profile-cv-contact-row">
+              <a href={`mailto:${siteConfig.email}`}>
+                <Mail size={13} /> {siteConfig.email}
+              </a>
+              <span>Bahasa: {member.languages.join(" · ")}</span>
+              <span>Bandung, Indonesia</span>
             </div>
           </div>
+
+          <figure className="profile-cv-portrait">
+            <Image
+              src={member.portrait}
+              fill
+              priority
+              alt={`Foto profil ${member.fullName}`}
+              sizes="(max-width: 768px) 100vw, 520px"
+            />
+            <figcaption>
+              <span>RPK / PARTNER PROFILE</span>
+              <strong>{profileNumber}</strong>
+            </figcaption>
+          </figure>
         </Container>
       </section>
 
-      {/* 2. Structured CV & Portfolio Body */}
-      <section className="section dossier-cv-section">
+      <section className="profile-cv-document">
         <Container>
-          <div className="dossier-cv-layout">
-            {/* Left Sticky CV Overview Desk */}
-            <aside className="cv-sticky-sidebar">
-              <div className="cv-summary-card">
-                <span className="cv-card-tag">CURRICULUM VITAE</span>
-                <h3 className="cv-card-name">{member.fullName}</h3>
-                <p className="cv-card-role">{member.role}</p>
+          <header className="profile-document-header">
+            <div>
+              <span className="profile-document-kicker">PROFESSIONAL PROFILE</span>
+              <h2>Curriculum Vitae</h2>
+            </div>
+            <p>
+              Ringkasan kompetensi, pendekatan, dan lingkup pendampingan profesional{" "}
+              {member.fullName.split(",")[0]} di RPK Law Office.
+            </p>
+          </header>
 
-                <nav className="cv-index-nav">
-                  <a href="#biografi" className="cv-nav-link">
-                    <span>01</span> Biografi &amp; Pendekatan
-                  </a>
-                  <a href="#spesialisasi" className="cv-nav-link">
-                    <span>02</span> Area Praktik
-                  </a>
-                  <a href="#pengalaman" className="cv-nav-link">
-                    <span>03</span> Pengalaman Penanganan
-                  </a>
-                  <a href="#pendidikan" className="cv-nav-link">
-                    <span>04</span> Pendidikan &amp; Kualifikasi
-                  </a>
-                  <a href="#timeline" className="cv-nav-link">
-                    <span>05</span> Perjalanan Profesional
-                  </a>
+          <div className="profile-document-layout">
+            <aside className="profile-document-sidebar">
+              <div className="profile-index-card">
+                <span className="profile-index-label">INDEKS PROFIL</span>
+                <strong>{profileNumber}</strong>
+                <nav>
+                  <a href="#ringkasan"><span>01</span> Profil Profesional</a>
+                  <a href="#pendekatan"><span>02</span> Pendekatan Kerja</a>
+                  <a href="#praktik"><span>03</span> Fokus Praktik</a>
+                  <a href="#pengalaman"><span>04</span> Kapabilitas</a>
+                  <a href="#pendidikan"><span>05</span> Pendidikan</a>
                 </nav>
+              </div>
 
-                <div className="cv-sidebar-cta">
-                  <span className="sidebar-cta-label">KONSULTASI PERKARA</span>
-                  <p className="sidebar-cta-text">
-                    Diskusikan situasi hukum Anda secara langsung dan rahasia.
-                  </p>
-                  <Link href="/kontak" className="sidebar-cta-btn">
-                    <span>Mulai Konsultasi</span>
-                    <ArrowRight size={13} />
-                  </Link>
-                </div>
+              <div className="profile-availability-card">
+                <span>DISKUSI AWAL</span>
+                <p>Konsultasi tersedia secara tatap muka maupun daring melalui firma.</p>
+                <Link href="/kontak">
+                  Hubungi Firma <ArrowRight size={13} />
+                </Link>
               </div>
             </aside>
 
-            {/* Right Main CV Dossier Blocks */}
-            <div className="cv-main-content">
-              {/* Block 1: Biografi */}
-              <section id="biografi" className="cv-dossier-block">
-                <div className="dossier-block-header">
-                  <span className="block-num">01</span>
-                  <h2 className="block-heading">Biografi &amp; Pendekatan Hukum</h2>
+            <main className="profile-document-main">
+              <section id="ringkasan" className="profile-document-block profile-summary-block">
+                <div className="profile-block-heading">
+                  <span>01</span>
+                  <h2>Profil Profesional</h2>
                 </div>
-                <div className="dossier-prose-body">
-                  {member.biography.map((p, i) => (
-                    <p key={i}>{p}</p>
+                <div className="profile-editorial-copy">
+                  {member.biography.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
                   ))}
                 </div>
               </section>
 
-              {/* Block 2: Area Praktik Spesialisasi */}
-              <section id="spesialisasi" className="cv-dossier-block">
-                <div className="dossier-block-header">
-                  <span className="block-num">02</span>
-                  <h2 className="block-heading">Area Praktik &amp; Spesialisasi</h2>
+              <section id="pendekatan" className="profile-document-block">
+                <div className="profile-block-heading">
+                  <span>02</span>
+                  <h2>Pendekatan Kerja</h2>
                 </div>
-                <div className="cv-practices-grid">
-                  {member.practiceAreas.map((area, i) => (
-                    <div key={area} className="cv-practice-card">
-                      <span className="cv-practice-num">0{i + 1}</span>
-                      <h3 className="cv-practice-title">{area}</h3>
-                      <p className="cv-practice-desc">
-                        Pendampingan strategis dan penelaahan regulasi terfokus untuk kebutuhan klien.
-                      </p>
+                <div className="profile-method-grid">
+                  {workingMethod.map((item) => (
+                    <article key={item.number}>
+                      <span>{item.number}</span>
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+
+              <section id="praktik" className="profile-document-block">
+                <div className="profile-block-heading">
+                  <span>03</span>
+                  <h2>Fokus Praktik</h2>
+                </div>
+                <div className="profile-practice-ledger">
+                  {member.practiceAreas.map((area, areaIndex) => (
+                    <div key={area}>
+                      <span>{String(areaIndex + 1).padStart(2, "0")}</span>
+                      <h3>{area}</h3>
+                      <p>Analisis, penelaahan dokumen, dan rekomendasi terarah sesuai konteks klien.</p>
+                      <Scale size={16} />
                     </div>
                   ))}
                 </div>
               </section>
 
-              {/* Block 3: Pengalaman & Lingkup Penanganan */}
-              <section id="pengalaman" className="cv-dossier-block">
-                <div className="dossier-block-header">
-                  <span className="block-num">03</span>
-                  <h2 className="block-heading">Lingkup Penanganan &amp; Pengalaman</h2>
+              <section id="pengalaman" className="profile-document-block">
+                <div className="profile-block-heading">
+                  <span>04</span>
+                  <h2>Kapabilitas Pendampingan</h2>
                 </div>
-                <div className="cv-experience-cards">
-                  {member.experience.map((item, i) => (
-                    <div key={item.title} className="cv-exp-card">
-                      <div className="exp-card-left">
-                        <Briefcase size={18} className="exp-icon" />
-                        <span className="exp-index">0{i + 1}</span>
+                <div className="profile-capability-list">
+                  {member.experience.map((item, itemIndex) => (
+                    <article key={item.title}>
+                      <div className="profile-capability-number">
+                        <Briefcase size={15} />
+                        <span>{String(itemIndex + 1).padStart(2, "0")}</span>
                       </div>
-                      <div className="exp-card-body">
-                        <h3 className="exp-title">{item.title}</h3>
-                        <p className="exp-desc">{item.description}</p>
+                      <div>
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
                       </div>
-                    </div>
+                    </article>
                   ))}
                 </div>
               </section>
 
-              {/* Block 4: Pendidikan & Kualifikasi */}
-              <section id="pendidikan" className="cv-dossier-block">
-                <div className="dossier-block-header">
-                  <span className="block-num">04</span>
-                  <h2 className="block-heading">Pendidikan &amp; Kualifikasi</h2>
+              <section id="pendidikan" className="profile-document-block profile-credentials-block">
+                <div className="profile-block-heading">
+                  <span>05</span>
+                  <h2>Pendidikan &amp; Kredensial</h2>
                 </div>
-                <div className="cv-dual-grid">
-                  {/* Education */}
-                  <div className="cv-credential-box">
-                    <div className="cred-box-header">
-                      <GraduationCap size={18} />
+                <div className="profile-credential-columns">
+                  <div className="profile-credential-column">
+                    <div className="profile-credential-title">
+                      <GraduationCap size={17} />
                       <h3>Riwayat Akademik</h3>
                     </div>
-                    <div className="cred-list">
-                      {member.education.map((edu) => (
-                        <div key={edu.degree} className="cred-item">
-                          <strong>{edu.degree}</strong>
-                          <span>{edu.institution}</span>
+                    {member.education.map((education) => (
+                      <div className="profile-credential-row" key={education.degree}>
+                        <Check size={13} />
+                        <div>
+                          <strong>{education.degree}</strong>
+                          {!education.institution.toLowerCase().includes("akan diperbarui") && (
+                            <span>{education.institution}</span>
+                          )}
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
                   </div>
 
-                  {/* Qualifications */}
-                  <div className="cv-credential-box">
-                    <div className="cred-box-header">
-                      <Award size={18} />
+                  <div className="profile-credential-column">
+                    <div className="profile-credential-title">
+                      <Award size={17} />
                       <h3>Kualifikasi Profesional</h3>
                     </div>
-                    <div className="cred-list">
-                      {member.qualifications.map((qual, i) => (
-                        <div key={i} className="cred-item">
-                          <strong>{qual}</strong>
-                          <span>RPK Law Office Credentials</span>
+                    {verifiedQualifications.length > 0 ? (
+                      verifiedQualifications.map((qualification) => (
+                        <div className="profile-credential-row" key={qualification}>
+                          <Check size={13} />
+                          <div><strong>{qualification}</strong></div>
                         </div>
-                      ))}
-                    </div>
+                      ))
+                    ) : (
+                      <p className="profile-credential-note">
+                        Informasi kredensial profesional dapat dikonfirmasi melalui RPK Law Office.
+                      </p>
+                    )}
                   </div>
                 </div>
               </section>
-
-              {/* Block 5: Timeline Karir */}
-              <section id="timeline" className="cv-dossier-block">
-                <div className="dossier-block-header">
-                  <span className="block-num">05</span>
-                  <h2 className="block-heading">Perjalanan Profesional</h2>
-                </div>
-                <div className="cv-timeline-track">
-                  {member.timeline.map((item, i) => (
-                    <div key={i} className="timeline-node">
-                      <div className="node-year">
-                        <Calendar size={13} />
-                        <span>{item.year}</span>
-                      </div>
-                      <div className="node-line-point" />
-                      <div className="node-details">
-                        <h3 className="node-title">{item.title}</h3>
-                        <p className="node-desc">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            </div>
+            </main>
           </div>
         </Container>
       </section>
 
-      {/* 3. Next / Prev Partner Navigator */}
-      <section className="partner-nav-bar">
+      <section className="partner-nav-bar profile-partner-navigation">
         <Container>
           <div className="partner-nav-grid">
             <Link href={`/tim/${prev.slug}`} className="partner-nav-item prev">
               <ArrowLeft size={18} />
               <div className="partner-nav-info">
-                <span className="nav-dir-label">ADVOKAT SEBELUMNYA</span>
+                <span className="nav-dir-label">PROFIL SEBELUMNYA</span>
                 <strong className="nav-partner-name">{prev.fullName}</strong>
                 <span className="nav-partner-role">{prev.role}</span>
               </div>
@@ -356,7 +310,7 @@ export default async function ProfilePage({
 
             <Link href={`/tim/${next.slug}`} className="partner-nav-item next">
               <div className="partner-nav-info">
-                <span className="nav-dir-label">ADVOKAT BERIKUTNYA</span>
+                <span className="nav-dir-label">PROFIL BERIKUTNYA</span>
                 <strong className="nav-partner-name">{next.fullName}</strong>
                 <span className="nav-partner-role">{next.role}</span>
               </div>

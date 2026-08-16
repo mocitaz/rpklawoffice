@@ -6,15 +6,17 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
-  CheckCircle2,
-  Shield,
-  MessageSquare,
-  Scale,
   Briefcase,
+  Check,
+  FileSearch,
+  MessageSquare,
+  Route,
+  Scale,
+  ShieldCheck,
 } from "lucide-react";
 import { practiceAreas, getPracticeArea } from "@/data/practice-areas";
 import { team } from "@/data/team";
-import { Breadcrumb, Container } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { ConsultationCTA } from "@/components/consultation-cta";
 import { siteConfig } from "@/data/site";
 
@@ -49,171 +51,247 @@ export default async function PracticeDetail({
   const index = practiceAreas.findIndex((item) => item.slug === slug);
   const prev = practiceAreas[(index - 1 + practiceAreas.length) % practiceAreas.length];
   const next = practiceAreas[(index + 1) % practiceAreas.length];
+  const practiceNumber = String(index + 1).padStart(2, "0");
 
-  // Filter lawyers that cover this area (or fallback to all partners)
   const relatedLawyers = team.filter((member) =>
-    member.practiceAreas.some((pa) =>
-      pa.toLowerCase().includes(area.shortTitle.toLowerCase()) ||
-      area.title.toLowerCase().includes(pa.toLowerCase())
-    )
+    member.practiceAreas.some(
+      (practice) =>
+        practice.toLowerCase().includes(area.shortTitle.toLowerCase()) ||
+        area.title.toLowerCase().includes(practice.toLowerCase()),
+    ),
   );
   const displayLawyers = relatedLawyers.length > 0 ? relatedLawyers : team.slice(0, 2);
 
+  const servicePhases = [
+    {
+      number: "01",
+      icon: FileSearch,
+      title: "Diagnostik Awal",
+      description: "Penelaahan fakta, dokumen, hubungan para pihak, dan posisi hukum awal klien.",
+    },
+    {
+      number: "02",
+      icon: Route,
+      title: "Pemetaan Strategi",
+      description: "Penyusunan opsi, kalkulasi risiko, prioritas, serta skenario penyelesaian yang relevan.",
+    },
+    {
+      number: "03",
+      icon: Briefcase,
+      title: "Eksekusi & Evaluasi",
+      description: "Pelaksanaan langkah hukum disertai koordinasi, dokumentasi, dan evaluasi berkala.",
+    },
+  ];
+
+  const serviceStandards = [
+    "Peta isu dan posisi hukum yang mudah dipahami",
+    "Opsi tindakan beserta konsekuensi dan prioritasnya",
+    "Dokumentasi serta korespondensi yang tertata",
+    "Pembaruan perkembangan dan rekomendasi lanjutan",
+  ];
+
   return (
     <>
-      {/* 1. Practice Detail Hero */}
-      <section className="practice-detail-hero">
+      <section className="service-dossier-hero">
         <Container>
-          <Breadcrumb
-            items={[
-              { label: "Beranda", href: "/" },
-              { label: "Area Praktik", href: "/area-praktik" },
-              { label: area.title },
-            ]}
-          />
+          <div className="service-hero-topline">
+            <Link href="/area-praktik">
+              <ArrowLeft size={13} />
+              <span>Kembali ke Area Praktik</span>
+            </Link>
+            <span>AREA PRAKTIK / {practiceNumber}</span>
+          </div>
 
-          <div className="practice-hero-wrap">
-            <span className="practice-hero-kicker">SPESIALISASI HUKUM · RPK LAW OFFICE</span>
-            <h1 className="practice-hero-heading">{area.title}</h1>
-            <p className="practice-hero-lead">{area.intro}</p>
+          <div className="service-hero-grid">
+            <div className="service-hero-copy">
+              <span className="service-hero-kicker">LAYANAN HUKUM TERFOKUS</span>
+              <h1>{area.title}</h1>
+              <p>{area.intro}</p>
 
-            <div className="practice-quick-stats">
-              <div className="stat-pill">
-                <Scale size={14} />
-                <span>{area.scope.length} Lingkup Penanganan</span>
-              </div>
-              <div className="stat-pill">
-                <Briefcase size={14} />
-                <span>Didukung Advokat Berlisensi</span>
-              </div>
-              <div className="stat-pill">
-                <Shield size={14} />
-                <span>Kerahasiaan Klien 100%</span>
+              <div className="service-hero-actions">
+                <Link href="/kontak" className="service-hero-primary">
+                  <span>Diskusikan Perkara</span>
+                  <ArrowUpRight size={15} />
+                </Link>
+                <Link
+                  href={`https://wa.me/${siteConfig.whatsappNumber}?text=Halo%20RPK%20Law%20Office,%20saya%20ingin%20berkonsultasi%20mengenai%20${encodeURIComponent(area.title)}.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="service-hero-secondary"
+                >
+                  <MessageSquare size={14} />
+                  <span>WhatsApp Firma</span>
+                </Link>
               </div>
             </div>
+
+            <figure className="service-hero-visual">
+              <Image
+                src={area.image}
+                fill
+                priority
+                alt={`Ilustrasi layanan ${area.title}`}
+                sizes="(max-width: 768px) 100vw, 560px"
+              />
+              <figcaption>
+                <span>RPK / LEGAL PRACTICE</span>
+                <strong>{practiceNumber}</strong>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className="service-hero-facts" aria-label="Ringkasan layanan">
+            <div><Scale size={14} /><span><strong>{area.scope.length}</strong> Lingkup Penanganan</span></div>
+            <div><Briefcase size={14} /><span>Partner-Led Strategy</span></div>
+            <div><ShieldCheck size={14} /><span>Kerahasiaan Profesional</span></div>
           </div>
         </Container>
       </section>
 
-      {/* 2. Practice Detail Dossier Body */}
-      <section className="section practice-dossier-body">
+      <section className="service-dossier-document">
         <Container>
-          <div className="practice-detail-layout">
-            {/* Left Sticky Desk */}
-            <aside className="practice-sticky-desk">
-              <div className="desk-intake-box">
-                <span className="desk-kicker">KONSULTASI BIDANG INI</span>
-                <h3 className="desk-title">{area.shortTitle}</h3>
-                <p className="desk-text">
-                  Diskusikan posisi hukum, audit berkas, atau mitigasi risiko terkait persoalan ini bersama tim kami.
-                </p>
+          <header className="service-document-header">
+            <div>
+              <span>REPRESENTASI TERSTRUKTUR</span>
+              <h2>Dari persoalan awal menuju langkah hukum yang terukur.</h2>
+            </div>
+            <p>
+              Setiap mandat dimulai dari pemahaman konteks dan tujuan klien, lalu diterjemahkan
+              menjadi pilihan strategi yang jelas, proporsional, dan dapat dijalankan.
+            </p>
+          </header>
 
-                <div className="desk-actions">
-                  <Link href="/kontak" className="desk-btn-primary">
-                    <span>Jadwalkan Konsultasi</span>
-                    <ArrowRight size={14} />
-                  </Link>
-
-                  <Link
-                    href={`https://wa.me/${siteConfig.whatsappNumber}?text=Halo%20RPK%20Law%20Office,%20saya%20ingin%20berkonsultasi%20mengenai%20${encodeURIComponent(area.title)}.`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="desk-btn-wa"
-                  >
-                    <MessageSquare size={14} />
-                    <span>WhatsApp Langsung</span>
-                    <ArrowUpRight size={14} />
-                  </Link>
-                </div>
+          <div className="service-document-layout">
+            <aside className="service-document-sidebar">
+              <div className="service-index-card">
+                <span>INDEKS LAYANAN</span>
+                <strong>{practiceNumber}</strong>
+                <nav>
+                  <a href="#overview"><span>01</span> Ikhtisar Layanan</a>
+                  <a href="#scope"><span>02</span> Lingkup Penanganan</a>
+                  <a href="#process"><span>03</span> Proses Representasi</a>
+                  <a href="#standards"><span>04</span> Standar Kerja</a>
+                </nav>
               </div>
 
-              {/* Related Lawyers Box */}
-              <div className="desk-lawyers-box">
-                <span className="lawyers-box-tag">ADVOKAT TERKAIT</span>
-                <div className="lawyers-mini-list">
-                  {displayLawyers.map((lawyer) => (
-                    <Link
-                      key={lawyer.slug}
-                      href={`/tim/${lawyer.slug}`}
-                      className="lawyer-mini-card"
-                    >
-                      <div className="lawyer-mini-portrait">
-                        <Image
-                          src={lawyer.portrait}
-                          fill
-                          sizes="48px"
-                          alt={lawyer.fullName}
-                          className="mini-img"
-                        />
-                      </div>
-                      <div className="lawyer-mini-info">
-                        <strong>{lawyer.fullName}</strong>
-                        <span>{lawyer.role}</span>
-                      </div>
-                      <ArrowRight size={14} className="mini-arrow" />
-                    </Link>
-                  ))}
-                </div>
+              <div className="service-consult-card">
+                <span>KONSULTASI BIDANG INI</span>
+                <h3>{area.shortTitle}</h3>
+                <p>Diskusikan posisi hukum dan langkah awal secara rahasia bersama tim kami.</p>
+                <Link href="/kontak">
+                  Mulai Konsultasi <ArrowRight size={13} />
+                </Link>
+              </div>
+
+              <div className="service-lawyer-list">
+                <span>ADVOKAT TERKAIT</span>
+                {displayLawyers.map((lawyer) => (
+                  <Link href={`/tim/${lawyer.slug}`} key={lawyer.slug}>
+                    <div>
+                      <Image
+                        src={lawyer.portrait}
+                        fill
+                        sizes="42px"
+                        alt={lawyer.fullName}
+                      />
+                    </div>
+                    <p><strong>{lawyer.fullName}</strong><span>{lawyer.role}</span></p>
+                    <ArrowRight size={13} />
+                  </Link>
+                ))}
               </div>
             </aside>
 
-            {/* Right Main Content */}
-            <div className="practice-main-dossier">
-              {/* Block 1: Deskripsi & Pendekatan */}
-              <section className="dossier-subblock">
-                <div className="subblock-header">
-                  <span className="subblock-num">01</span>
-                  <h2 className="subblock-title">Pendekatan &amp; Fokus Pendampingan</h2>
+            <main className="service-document-main">
+              <section id="overview" className="service-document-block service-overview-block">
+                <div className="service-block-heading">
+                  <span>01</span>
+                  <h2>Ikhtisar Layanan</h2>
                 </div>
-                <div className="subblock-prose">
+                <div className="service-overview-copy">
                   <p>{area.description}</p>
                   <p>
-                    Dalam menangani setiap perkara di bidang {area.title.toLowerCase()}, kami senantiasa memulai dengan penelaahan menyeluruh terhadap fakta material dan dokumen legal terkait. Pendekatan ini memastikan bahwa setiap rekomendasi yang diberikan berpijak pada kepastian yuridis dan terintegrasi dengan kepentingan strategis klien.
+                    Pendampingan dimulai dengan penelaahan menyeluruh terhadap fakta material,
+                    dokumen, kepentingan para pihak, dan kemungkinan konsekuensi. Hasil analisis
+                    tersebut menjadi dasar dalam merumuskan pilihan langkah yang sesuai dengan
+                    posisi serta tujuan klien.
                   </p>
+                </div>
+                <div className="service-principle-bar">
+                  <span>01 · ANALISIS</span>
+                  <span>02 · STRATEGI</span>
+                  <span>03 · REPRESENTASI</span>
                 </div>
               </section>
 
-              {/* Block 2: Rincian Ruang Lingkup Layanan */}
-              <section className="dossier-subblock">
-                <div className="subblock-header">
-                  <span className="subblock-num">02</span>
-                  <h2 className="subblock-title">Ruang Lingkup Layanan</h2>
+              <section id="scope" className="service-document-block">
+                <div className="service-block-heading">
+                  <span>02</span>
+                  <h2>Lingkup Penanganan</h2>
                 </div>
-                <div className="scope-detail-grid">
-                  {area.scope.map((item, idx) => (
-                    <div key={item} className="scope-detail-card">
-                      <div className="scope-card-top">
-                        <span className="scope-num">0{idx + 1}</span>
-                        <CheckCircle2 size={16} className="scope-icon" />
-                      </div>
-                      <h3 className="scope-title">{item}</h3>
-                      <p className="scope-desc">
-                        Penanganan komprehensif mulai dari telaah risiko awal, penyusunan instrumen hukum, hingga pendampingan representasi.
-                      </p>
+                <div className="service-scope-ledger">
+                  {area.scope.map((item, itemIndex) => (
+                    <div key={item}>
+                      <span>{String(itemIndex + 1).padStart(2, "0")}</span>
+                      <h3>{item}</h3>
+                      <p>Penelaahan dan pendampingan terarah sesuai dokumen, risiko, dan kebutuhan perkara.</p>
+                      <Check size={15} />
                     </div>
                   ))}
                 </div>
               </section>
 
-              {/* Block 3: Nilai Tambah & Proteksi */}
-              <section className="dossier-subblock">
-                <div className="subblock-header">
-                  <span className="subblock-num">03</span>
-                  <h2 className="subblock-title">Komitmen &amp; Standar Kerja Firma</h2>
+              <section id="process" className="service-document-block">
+                <div className="service-block-heading">
+                  <span>03</span>
+                  <h2>Proses Representasi</h2>
                 </div>
-                <div className="assurance-box">
-                  <p>
-                    Setiap pendampingan di RPK Law Office dilindungi oleh kerahasiaan profesi advokat (Attorney-Client Privilege). Kami berkomunikasi secara transparan mengenai kalkulasi risiko, estimasi waktu, serta tahapan prosedural yang harus ditempuh.
-                  </p>
+                <div className="service-process-grid">
+                  {servicePhases.map((phase) => {
+                    const Icon = phase.icon;
+                    return (
+                      <article key={phase.number}>
+                        <div><span>{phase.number}</span><Icon size={17} /></div>
+                        <h3>{phase.title}</h3>
+                        <p>{phase.description}</p>
+                      </article>
+                    );
+                  })}
                 </div>
               </section>
-            </div>
+
+              <section id="standards" className="service-document-block service-standards-block">
+                <div className="service-block-heading">
+                  <span>04</span>
+                  <h2>Standar Kerja &amp; Deliverables</h2>
+                </div>
+                <div className="service-standard-layout">
+                  <div className="service-assurance-panel">
+                    <ShieldCheck size={22} />
+                    <span>KERAHASIAAN PROFESIONAL</span>
+                    <h3>Strategi dijaga. Komunikasi dibuat jelas.</h3>
+                    <p>
+                      Informasi dan dokumen klien ditangani secara terbatas dengan komunikasi
+                      mengenai risiko, tahapan, serta perkembangan mandat yang transparan.
+                    </p>
+                  </div>
+                  <div className="service-deliverable-list">
+                    {serviceStandards.map((standard, standardIndex) => (
+                      <div key={standard}>
+                        <span>{String(standardIndex + 1).padStart(2, "0")}</span>
+                        <p>{standard}</p>
+                        <Check size={14} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            </main>
           </div>
         </Container>
       </section>
 
-      {/* 3. Next / Prev Practice Navigator */}
-      <section className="practice-nav-bar">
+      <section className="practice-nav-bar service-practice-navigation">
         <Container>
           <div className="practice-nav-grid">
             <Link href={`/area-praktik/${prev.slug}`} className="practice-nav-item prev">

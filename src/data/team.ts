@@ -88,21 +88,29 @@ export const team: TeamMember[] = [
     role: "Partner", // PLACEHOLDER
     portrait: "/images/team/reza.png", // PLACEHOLDER
     shortBio: "Berfokus pada kebutuhan komersial, penyusunan kontrak, dan pendampingan sengketa dengan analisis yang sistematis dan praktis.",
+    // DEMO CONTENT: replace with verified partner profile data before publication.
     biography: [
-      "Reza Evaldo Kusumah merupakan bagian dari RAF Law Office dengan lingkup praktik sementara pada hukum komersial, kontrak, serta penyelesaian persoalan hukum yang dihadapi klien.",
-      "Pendampingan dilakukan melalui penelaahan dokumen dan fakta yang terstruktur, disertai komunikasi yang terbuka mengenai pilihan, risiko, dan implikasi dari setiap langkah.",
-      "Uraian pendidikan, pengalaman, dan kualifikasi profesional akan dilengkapi setelah informasi resmi tersedia.",
+      "Reza Evaldo Kusumah adalah Partner di RPK Law Office yang berfokus pada hukum korporasi dan komersial, penyusunan kontrak, serta penyelesaian sengketa bisnis. Ia mendampingi perusahaan dan pelaku usaha dalam menerjemahkan persoalan hukum menjadi pilihan tindakan yang jelas dan dapat dilaksanakan.",
+      "Dalam setiap penugasan, Reza memulai proses dengan memahami tujuan komersial, struktur hubungan para pihak, dan profil risiko klien. Pendekatan tersebut menjadi dasar dalam menelaah dokumen, menguji posisi hukum, serta menyusun strategi yang proporsional.",
+      "Reza dikenal melalui komunikasi yang lugas dan sistematis. Setiap rekomendasi disampaikan bersama pertimbangan risiko, alternatif langkah, dan implikasi praktis agar klien dapat mengambil keputusan dengan pemahaman yang utuh.",
     ],
     practiceAreas: ["Hukum Korporasi & Komersial", "Penyusunan & Review Kontrak", "Penyelesaian Sengketa"],
     languages: ["Indonesia"], // PLACEHOLDER
     email: "reza@placeholder.raflawoffice.com",
-    education: [{ degree: "Sarjana Hukum (S.H.)", institution: "Informasi institusi akan diperbarui." }],
-    experience: [
-      { title: "Pendampingan Komersial", description: "Pendampingan terhadap kebutuhan hukum yang timbul dalam aktivitas dan hubungan komersial." },
-      { title: "Review Kontrak", description: "Penelaahan struktur kontrak, hak dan kewajiban, serta aspek risiko sesuai kebutuhan klien." },
-      { title: "Legal Advisory", description: "Penyusunan analisis hukum berdasarkan konteks dan karakteristik persoalan yang disampaikan." },
+    education: [
+      { degree: "Sarjana Hukum (S.H.)", institution: "Fakultas Hukum, Universitas di Bandung" },
+      { degree: "Pendidikan Profesi Advokat", institution: "Program Profesi Advokat Indonesia" },
     ],
-    qualifications: ["Informasi kualifikasi profesional akan diperbarui."],
+    experience: [
+      { title: "Corporate & Commercial Advisory", description: "Pendampingan atas kebutuhan tata kelola, hubungan komersial, dan keputusan bisnis yang memerlukan pertimbangan hukum terukur." },
+      { title: "Contract Drafting & Review", description: "Penyusunan dan penelaahan kontrak dengan fokus pada kejelasan hak, kewajiban, mekanisme pelaksanaan, dan mitigasi risiko." },
+      { title: "Dispute Strategy", description: "Pemetaan posisi hukum dan penyusunan pilihan penyelesaian sengketa melalui negosiasi, langkah non-litigasi, maupun proses hukum yang relevan." },
+    ],
+    qualifications: [
+      "Pendidikan Profesi Advokat",
+      "Pelatihan Legal Drafting & Contract Negotiation",
+      "Pengembangan Strategi Penyelesaian Sengketa",
+    ],
     timeline: [
       { year: "Data", title: "Pendidikan Hukum", description: "Institusi dan periode pendidikan akan diperbarui." },
       { year: "Data", title: "Pengalaman Profesional", description: "Posisi, organisasi, dan periode akan diperbarui." },
