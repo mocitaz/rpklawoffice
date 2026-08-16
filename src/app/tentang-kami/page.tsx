@@ -10,7 +10,7 @@ import {
   Lock,
   ArrowUpRight,
 } from "lucide-react";
-import { Container, Breadcrumb } from "@/components/ui";
+import { Container, Button } from "@/components/ui";
 import { ConsultationCTA } from "@/components/consultation-cta";
 import { team } from "@/data/team";
 
@@ -25,68 +25,55 @@ export default function AboutPage() {
 
   return (
     <div className="about-dossier-page">
-      {/* 1. Cinematic Institutional Hero */}
-      <section className="about-cinematic-hero">
+      {/* 1. Exact Home-Styled Hero for Tentang Kami */}
+      <section className="home-hero hero-editorial-clean">
         <div className="hero-backdrop">
           <Image
             src="/images/about/monument.jpg"
             fill
+            loading="eager"
             priority
             sizes="100vw"
-            alt="Arsitektur Monumental Institusi Hukum RPK Law Office"
+            alt="Arsitektur Monumental RPK Law Office"
             className="hero-bg-image"
           />
           <div className="hero-cinematic-scrim" />
         </div>
 
-        <Container className="about-hero-inner">
-          <div className="about-hero-top-nav">
-            <Breadcrumb
-              items={[
-                { label: "Beranda", href: "/" },
-                { label: "Tentang Kami" },
-              ]}
-            />
-          </div>
-
-          <div className="about-hero-lead-box">
-            <div className="about-hero-micro-label">
+        <Container className="hero-editorial-content">
+          <div className="hero-lead-box">
+            <div className="hero-micro-label">
               <span className="label-line" />
-              <span>RPK LAW OFFICE · PROFIL KELEMBAGAAN</span>
+              <span>RPK LAW OFFICE · TENTANG KAMI</span>
             </div>
 
-            <h1 className="about-hero-main-title">
-              Presisi Yuridis. <br />
-              <em>Integritas Tanpa Kompromi.</em>
+            <h1 className="hero-title-clean">
+              Presisi Yuridis.<br />
+              Integritas <em>Tanpa Kompromi.</em>
             </h1>
 
-            <p className="about-hero-lead-desc">
-              RPK Law Office didirikan di atas fondasi ketelitian analisis, transparansi komunikasi, dan dedikasi penuh pada kepastian hukum guna melindungi setiap kepentingan strategis klien.
-            </p>
-
-            <div className="about-hero-actions">
-              <Link href="/kontak" className="about-hero-btn-primary">
-                <span>Jadwalkan Konsultasi</span>
-                <ArrowUpRight size={14} />
-              </Link>
-              <Link href="/area-praktik" className="about-hero-btn-outline">
+            <div className="hero-cta-clean">
+              <Button href="/kontak" className="hero-btn-gold">
+                Jadwalkan Konsultasi
+              </Button>
+              <Link href="/area-praktik" className="hero-explore-link">
                 <span>Lihat Area Praktik</span>
                 <ArrowRight size={14} />
               </Link>
             </div>
           </div>
 
-          {/* Bottom Facts Bar */}
-          <div className="about-hero-bottom-bar">
-            <div className="about-hero-pills">
-              <span>01 Lisensi Resmi PERADI</span>
+          {/* Minimal Bottom Bar */}
+          <div className="hero-bottom-bar">
+            <div className="bottom-pills">
+              <span>01 Lisensi PERADI</span>
               <span className="dot-sep" />
-              <span>02 Kerahasiaan 100% (Privilege)</span>
+              <span>02 Kerahasiaan 100%</span>
               <span className="dot-sep" />
-              <span>03 Pendekatan Butik Personal</span>
+              <span>03 Pendekatan Butik</span>
             </div>
 
-            <div className="about-hero-location">
+            <div className="bottom-meta">
               <span className="live-dot" />
               <span>Bandung · Jawa Barat</span>
             </div>
