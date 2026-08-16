@@ -3,11 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  Scale,
-  Building2,
   CheckCircle2,
-  FileCheck,
-  Lock,
 } from "lucide-react";
 import { Container, Button, Eyebrow, TextLink } from "@/components/ui";
 import { ConsultationCTA } from "@/components/consultation-cta";
@@ -117,72 +113,76 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* 3. Standards, Governance & Legal Credentials */}
+      {/* 3. Standards, Governance & Legal Credentials — Sleek Horizon Monolith */}
       <section className="section about-governance-section">
         <Container>
           <div className="section-head-center">
-            <span className="sub-kicker">TATA KELOLA &amp; STANDAR PROFESIONAL</span>
-            <h2 className="section-title-dossier">Empat Landasan Tata Kelola Firma</h2>
-            <p className="section-desc-dossier">
-              Kepatuhan terhadap kode etik profesi advokat dan akuntabilitas hukum dalam setiap pendampingan.
+            <Eyebrow>Tata Kelola &amp; Standar Profesional</Eyebrow>
+            <h2 className="governance-title-main">Empat Landasan Tata Kelola Firma</h2>
+            <p className="governance-desc-main">
+              Standar kepatuhan kode etik profesi advokat dan akuntabilitas hukum dalam setiap representasi klien.
             </p>
           </div>
 
-          <div className="governance-matrix-grid">
-            <div className="gov-matrix-card">
-              <div className="gov-card-header">
-                <div className="gov-icon-box">
-                  <FileCheck size={20} />
-                </div>
-                <span className="gov-index">01</span>
+          <div className="governance-monolith-strip">
+            <div className="gov-strip-item">
+              <div className="gov-strip-top">
+                <span className="gov-num-tag">01</span>
+                <span className="gov-badge-cat">LEGALITAS</span>
               </div>
-              <span className="gov-label">LEGALITAS RESMI</span>
-              <h3 className="gov-title">Lisensi &amp; Berita Acara Sumpah</h3>
-              <p className="gov-text">
+              <h3 className="gov-item-heading">Lisensi &amp; Sumpah Advokat</h3>
+              <p className="gov-item-text">
                 Seluruh advokat telah diambil sumpah di Pengadilan Tinggi dan terdaftar resmi di organisasi advokat nasional (PERADI).
               </p>
+              <div className="gov-meta-pill">
+                <span className="pill-dot" />
+                <span>Lisensi Resmi PERADI</span>
+              </div>
             </div>
 
-            <div className="gov-matrix-card">
-              <div className="gov-card-header">
-                <div className="gov-icon-box">
-                  <Lock size={20} />
-                </div>
-                <span className="gov-index">02</span>
+            <div className="gov-strip-item">
+              <div className="gov-strip-top">
+                <span className="gov-num-tag">02</span>
+                <span className="gov-badge-cat">KERAHASIAAN</span>
               </div>
-              <span className="gov-label">KERAHASIAAN MUTLAK</span>
-              <h3 className="gov-title">Attorney-Client Privilege</h3>
-              <p className="gov-text">
-                Jaminan kerahasiaan 100% terhadap seluruh dokumen, data perusahaan, dan informasi strategis sejak konsultasi permulaan.
+              <h3 className="gov-item-heading">Attorney-Client Privilege</h3>
+              <p className="gov-item-text">
+                Jaminan kerahasiaan 100% terhadap seluruh dokumen, data bisnis, dan informasi sensitif sejak konsultasi permulaan.
               </p>
+              <div className="gov-meta-pill">
+                <span className="pill-dot" />
+                <span>Proteksi Data Mutlak</span>
+              </div>
             </div>
 
-            <div className="gov-matrix-card">
-              <div className="gov-card-header">
-                <div className="gov-icon-box">
-                  <Scale size={20} />
-                </div>
-                <span className="gov-index">03</span>
+            <div className="gov-strip-item">
+              <div className="gov-strip-top">
+                <span className="gov-num-tag">03</span>
+                <span className="gov-badge-cat">AKUNTABILITAS</span>
               </div>
-              <span className="gov-label">AKUNTABILITAS TINGGI</span>
-              <h3 className="gov-title">Keterlibatan Langsung Partner</h3>
-              <p className="gov-text">
+              <h3 className="gov-item-heading">Supervisi Langsung Partner</h3>
+              <p className="gov-item-text">
                 Penanganan perkara diarahkan, dirumuskan, dan diawasi langsung oleh Partner yang bertanggung jawab atas setiap strategi.
               </p>
+              <div className="gov-meta-pill">
+                <span className="pill-dot" />
+                <span>Partner Lead Strategy</span>
+              </div>
             </div>
 
-            <div className="gov-matrix-card">
-              <div className="gov-card-header">
-                <div className="gov-icon-box">
-                  <Building2 size={20} />
-                </div>
-                <span className="gov-index">04</span>
+            <div className="gov-strip-item">
+              <div className="gov-strip-top">
+                <span className="gov-num-tag">04</span>
+                <span className="gov-badge-cat">AKSESIBILITAS</span>
               </div>
-              <span className="gov-label">INFRASTRUKTUR REPRESENTATIF</span>
-              <h3 className="gov-title">Layanan Tatap Muka &amp; Daring</h3>
-              <p className="gov-text">
+              <h3 className="gov-item-heading">Tatap Muka &amp; Daring</h3>
+              <p className="gov-item-text">
                 Fasilitas ruang pertemuan profesional di Bandung dan sistem telekonferensi aman untuk efisiensi koordinasi lintas kota.
               </p>
+              <div className="gov-meta-pill">
+                <span className="pill-dot" />
+                <span>Bandung &amp; Telekonferensi</span>
+              </div>
             </div>
           </div>
         </Container>
