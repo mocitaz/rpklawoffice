@@ -113,75 +113,87 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* 3. Standards, Governance & Legal Credentials — Sleek Horizon Monolith */}
+      {/* 3. Standards, Governance & Legal Credentials — 2x2 Architectural Quad Matrix */}
       <section className="section about-governance-section">
         <Container>
           <div className="section-head-center">
             <Eyebrow>Tata Kelola &amp; Standar Profesional</Eyebrow>
             <h2 className="governance-title-main">Empat Landasan Tata Kelola Firma</h2>
             <p className="governance-desc-main">
-              Standar kepatuhan kode etik profesi advokat dan akuntabilitas hukum dalam setiap representasi klien.
+              Standar kepatuhan kode etik profesi advokat dan akuntabilitas yuridis dalam setiap representasi hukum.
             </p>
           </div>
 
-          <div className="governance-monolith-strip">
-            <div className="gov-strip-item">
-              <div className="gov-strip-top">
-                <span className="gov-num-tag">01</span>
-                <span className="gov-badge-cat">LEGALITAS</span>
+          <div className="governance-quad-matrix">
+            {/* Quad 1 */}
+            <div className="gov-quad-cell">
+              <div className="gov-quad-num-col">
+                <span className="gov-quad-num">01</span>
               </div>
-              <h3 className="gov-item-heading">Lisensi &amp; Sumpah Advokat</h3>
-              <p className="gov-item-text">
-                Seluruh advokat telah diambil sumpah di Pengadilan Tinggi dan terdaftar resmi di organisasi advokat nasional (PERADI).
-              </p>
-              <div className="gov-meta-pill">
-                <span className="pill-dot" />
-                <span>Lisensi Resmi PERADI</span>
-              </div>
-            </div>
-
-            <div className="gov-strip-item">
-              <div className="gov-strip-top">
-                <span className="gov-num-tag">02</span>
-                <span className="gov-badge-cat">KERAHASIAAN</span>
-              </div>
-              <h3 className="gov-item-heading">Attorney-Client Privilege</h3>
-              <p className="gov-item-text">
-                Jaminan kerahasiaan 100% terhadap seluruh dokumen, data bisnis, dan informasi sensitif sejak konsultasi permulaan.
-              </p>
-              <div className="gov-meta-pill">
-                <span className="pill-dot" />
-                <span>Proteksi Data Mutlak</span>
+              <div className="gov-quad-body">
+                <span className="gov-quad-kicker">LEGALITAS RESMI</span>
+                <h3 className="gov-quad-title">Lisensi &amp; Berita Acara Sumpah</h3>
+                <p className="gov-quad-desc">
+                  Seluruh advokat telah diambil sumpah resmi di hadapan Pengadilan Tinggi dan memegang lisensi aktif organisasi advokat nasional (PERADI).
+                </p>
+                <div className="gov-quad-tags">
+                  <span className="gov-tag-item">Advokat PERADI</span>
+                  <span className="gov-tag-item">Sumpah Pengadilan Tinggi</span>
+                </div>
               </div>
             </div>
 
-            <div className="gov-strip-item">
-              <div className="gov-strip-top">
-                <span className="gov-num-tag">03</span>
-                <span className="gov-badge-cat">AKUNTABILITAS</span>
+            {/* Quad 2 */}
+            <div className="gov-quad-cell">
+              <div className="gov-quad-num-col">
+                <span className="gov-quad-num">02</span>
               </div>
-              <h3 className="gov-item-heading">Supervisi Langsung Partner</h3>
-              <p className="gov-item-text">
-                Penanganan perkara diarahkan, dirumuskan, dan diawasi langsung oleh Partner yang bertanggung jawab atas setiap strategi.
-              </p>
-              <div className="gov-meta-pill">
-                <span className="pill-dot" />
-                <span>Partner Lead Strategy</span>
+              <div className="gov-quad-body">
+                <span className="gov-quad-kicker">KERAHASIAAN MUTLAK</span>
+                <h3 className="gov-quad-title">Attorney-Client Privilege</h3>
+                <p className="gov-quad-desc">
+                  Jaminan kerahasiaan 100% terhadap seluruh dokumen, data keuangan, dan informasi strategis sejak konsultasi permulaan tanpa syarat.
+                </p>
+                <div className="gov-quad-tags">
+                  <span className="gov-tag-item">Proteksi Data 100%</span>
+                  <span className="gov-tag-item">Non-Disclosure Protocol</span>
+                </div>
               </div>
             </div>
 
-            <div className="gov-strip-item">
-              <div className="gov-strip-top">
-                <span className="gov-num-tag">04</span>
-                <span className="gov-badge-cat">AKSESIBILITAS</span>
+            {/* Quad 3 */}
+            <div className="gov-quad-cell">
+              <div className="gov-quad-num-col">
+                <span className="gov-quad-num">03</span>
               </div>
-              <h3 className="gov-item-heading">Tatap Muka &amp; Daring</h3>
-              <p className="gov-item-text">
-                Fasilitas ruang pertemuan profesional di Bandung dan sistem telekonferensi aman untuk efisiensi koordinasi lintas kota.
-              </p>
-              <div className="gov-meta-pill">
-                <span className="pill-dot" />
-                <span>Bandung &amp; Telekonferensi</span>
+              <div className="gov-quad-body">
+                <span className="gov-quad-kicker">AKUNTABILITAS TINGGI</span>
+                <h3 className="gov-quad-title">Keterlibatan Langsung Partner</h3>
+                <p className="gov-quad-desc">
+                  Penanganan perkara diarahkan, dirumuskan, dan diawasi langsung oleh Partner penanggung jawab atas setiap langkah dan rekomendasi.
+                </p>
+                <div className="gov-quad-tags">
+                  <span className="gov-tag-item">Partner-Led Strategy</span>
+                  <span className="gov-tag-item">Tanpa Perantara Lepas</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Quad 4 */}
+            <div className="gov-quad-cell">
+              <div className="gov-quad-num-col">
+                <span className="gov-quad-num">04</span>
+              </div>
+              <div className="gov-quad-body">
+                <span className="gov-quad-kicker">INFRASTRUKTUR REPRESENTATIF</span>
+                <h3 className="gov-quad-title">Layanan Tatap Muka &amp; Daring</h3>
+                <p className="gov-quad-desc">
+                  Fasilitas ruang pertemuan profesional di Bandung dan sistem telekonferensi aman untuk efisiensi koordinasi klien lintas kota dan daerah.
+                </p>
+                <div className="gov-quad-tags">
+                  <span className="gov-tag-item">Fasilitas Bandung</span>
+                  <span className="gov-tag-item">Telekonferensi Aman</span>
+                </div>
               </div>
             </div>
           </div>
