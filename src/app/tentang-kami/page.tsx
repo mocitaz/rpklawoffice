@@ -113,87 +113,77 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* 3. Standards, Governance & Legal Credentials — 2x2 Architectural Quad Matrix */}
+      {/* 3. Standards, Governance & Legal Credentials — Horizontal Precision Ledger */}
       <section className="section about-governance-section">
         <Container>
-          <div className="section-head-center">
-            <Eyebrow>Tata Kelola &amp; Standar Profesional</Eyebrow>
-            <h2 className="governance-title-main">Empat Landasan Tata Kelola Firma</h2>
-            <p className="governance-desc-main">
-              Standar kepatuhan kode etik profesi advokat dan akuntabilitas yuridis dalam setiap representasi hukum.
-            </p>
+          <div className="governance-ledger-header">
+            <div className="ledger-header-left">
+              <span className="sub-kicker">TATA KELOLA &amp; STANDAR PROFESIONAL</span>
+              <h2 className="governance-title-main">
+                Empat Landasan <em>Tata Kelola</em> Firma
+              </h2>
+            </div>
+            <div className="ledger-header-right">
+              <p className="governance-desc-main">
+                Standar kepatuhan kode etik profesi advokat, akuntabilitas yuridis, dan jaminan perlindungan mutlak bagi setiap klien RPK Law Office.
+              </p>
+            </div>
           </div>
 
-          <div className="governance-quad-matrix">
-            {/* Quad 1 */}
-            <div className="gov-quad-cell">
-              <div className="gov-quad-num-col">
-                <span className="gov-quad-num">01</span>
+          <div className="governance-spec-ledger">
+            <div className="ledger-row">
+              <div className="ledger-cell-num">01</div>
+              <div className="ledger-cell-title">
+                <span className="ledger-tag">LEGALITAS RESMI</span>
+                <h3 className="ledger-heading">Lisensi &amp; Berita Acara Sumpah</h3>
               </div>
-              <div className="gov-quad-body">
-                <span className="gov-quad-kicker">LEGALITAS RESMI</span>
-                <h3 className="gov-quad-title">Lisensi &amp; Berita Acara Sumpah</h3>
-                <p className="gov-quad-desc">
-                  Seluruh advokat telah diambil sumpah resmi di hadapan Pengadilan Tinggi dan memegang lisensi aktif organisasi advokat nasional (PERADI).
-                </p>
-                <div className="gov-quad-tags">
-                  <span className="gov-tag-item">Advokat PERADI</span>
-                  <span className="gov-tag-item">Sumpah Pengadilan Tinggi</span>
-                </div>
+              <div className="ledger-cell-desc">
+                Seluruh advokat berpraktik telah diambil sumpah resmi di hadapan Pengadilan Tinggi dan memegang lisensi aktif organisasi advokat nasional (PERADI).
+              </div>
+              <div className="ledger-cell-badge">
+                <span className="ledger-badge-pill">Advokat PERADI</span>
               </div>
             </div>
 
-            {/* Quad 2 */}
-            <div className="gov-quad-cell">
-              <div className="gov-quad-num-col">
-                <span className="gov-quad-num">02</span>
+            <div className="ledger-row">
+              <div className="ledger-cell-num">02</div>
+              <div className="ledger-cell-title">
+                <span className="ledger-tag">KERAHASIAAN MUTLAK</span>
+                <h3 className="ledger-heading">Attorney-Client Privilege</h3>
               </div>
-              <div className="gov-quad-body">
-                <span className="gov-quad-kicker">KERAHASIAAN MUTLAK</span>
-                <h3 className="gov-quad-title">Attorney-Client Privilege</h3>
-                <p className="gov-quad-desc">
-                  Jaminan kerahasiaan 100% terhadap seluruh dokumen, data keuangan, dan informasi strategis sejak konsultasi permulaan tanpa syarat.
-                </p>
-                <div className="gov-quad-tags">
-                  <span className="gov-tag-item">Proteksi Data 100%</span>
-                  <span className="gov-tag-item">Non-Disclosure Protocol</span>
-                </div>
+              <div className="ledger-cell-desc">
+                Jaminan kerahasiaan 100% terhadap seluruh dokumen, data keuangan, dan informasi bisnis strategis sejak konsultasi permulaan tanpa syarat.
+              </div>
+              <div className="ledger-cell-badge">
+                <span className="ledger-badge-pill">Proteksi Data 100%</span>
               </div>
             </div>
 
-            {/* Quad 3 */}
-            <div className="gov-quad-cell">
-              <div className="gov-quad-num-col">
-                <span className="gov-quad-num">03</span>
+            <div className="ledger-row">
+              <div className="ledger-cell-num">03</div>
+              <div className="ledger-cell-title">
+                <span className="ledger-tag">AKUNTABILITAS TINGGI</span>
+                <h3 className="ledger-heading">Keterlibatan Langsung Partner</h3>
               </div>
-              <div className="gov-quad-body">
-                <span className="gov-quad-kicker">AKUNTABILITAS TINGGI</span>
-                <h3 className="gov-quad-title">Keterlibatan Langsung Partner</h3>
-                <p className="gov-quad-desc">
-                  Penanganan perkara diarahkan, dirumuskan, dan diawasi langsung oleh Partner penanggung jawab atas setiap langkah dan rekomendasi.
-                </p>
-                <div className="gov-quad-tags">
-                  <span className="gov-tag-item">Partner-Led Strategy</span>
-                  <span className="gov-tag-item">Tanpa Perantara Lepas</span>
-                </div>
+              <div className="ledger-cell-desc">
+                Penanganan perkara diarahkan, dirumuskan, dan diawasi langsung oleh Partner penanggung jawab atas setiap langkah dan rekomendasi.
+              </div>
+              <div className="ledger-cell-badge">
+                <span className="ledger-badge-pill">Partner-Led Strategy</span>
               </div>
             </div>
 
-            {/* Quad 4 */}
-            <div className="gov-quad-cell">
-              <div className="gov-quad-num-col">
-                <span className="gov-quad-num">04</span>
+            <div className="ledger-row">
+              <div className="ledger-cell-num">04</div>
+              <div className="ledger-cell-title">
+                <span className="ledger-tag">INFRASTRUKTUR &amp; AKSES</span>
+                <h3 className="ledger-heading">Layanan Tatap Muka &amp; Daring</h3>
               </div>
-              <div className="gov-quad-body">
-                <span className="gov-quad-kicker">INFRASTRUKTUR REPRESENTATIF</span>
-                <h3 className="gov-quad-title">Layanan Tatap Muka &amp; Daring</h3>
-                <p className="gov-quad-desc">
-                  Fasilitas ruang pertemuan profesional di Bandung dan sistem telekonferensi aman untuk efisiensi koordinasi klien lintas kota dan daerah.
-                </p>
-                <div className="gov-quad-tags">
-                  <span className="gov-tag-item">Fasilitas Bandung</span>
-                  <span className="gov-tag-item">Telekonferensi Aman</span>
-                </div>
+              <div className="ledger-cell-desc">
+                Fasilitas ruang pertemuan profesional di Bandung dan sistem telekonferensi aman untuk efisiensi koordinasi klien lintas kota dan daerah.
+              </div>
+              <div className="ledger-cell-badge">
+                <span className="ledger-badge-pill">Bandung &amp; Daring</span>
               </div>
             </div>
           </div>

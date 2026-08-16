@@ -1742,135 +1742,141 @@ body {
   background: var(--warm);
 }
 
-/* 3. Governance & Legal Credentials — 2x2 Architectural Quad Matrix */
+/* 3. Governance & Legal Credentials — Horizontal Precision Ledger */
 .about-governance-section {
   padding: 104px 0 114px;
-  background: #fbfbfa;
-  border-bottom: 1px solid var(--line);
-}
-
-.governance-title-main {
-  font-family: var(--serif);
-  font-size: clamp(30px, 3.4vw, 42px);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.035em;
-  color: var(--ink);
-  margin: 12px 0 14px;
-}
-
-.governance-desc-main {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--muted);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.governance-quad-matrix {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
   background: #ffffff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(13, 19, 31, 0.04);
-  margin-top: 52px;
+  border-bottom: 1px solid var(--line);
 }
 
-.gov-quad-cell {
-  padding: 44px 40px;
+.governance-ledger-header {
   display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 24px;
-  align-items: start;
-  position: relative;
-  transition: all 0.25s ease;
-  background: #ffffff;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 48px;
+  align-items: flex-end;
+  margin-bottom: 52px;
 }
 
-.gov-quad-cell:nth-child(1) {
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.gov-quad-cell:nth-child(2) {
-  border-bottom: 1px solid var(--line);
-}
-
-.gov-quad-cell:nth-child(3) {
-  border-right: 1px solid var(--line);
-}
-
-.gov-quad-cell:hover {
-  background: #fafaf9;
-}
-
-.gov-quad-num-col {
-  display: flex;
-  align-items: flex-start;
-}
-
-.gov-quad-num {
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--gold);
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.gov-quad-body {
+.ledger-header-left {
   display: flex;
   flex-direction: column;
 }
 
-.gov-quad-kicker {
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #6b7280;
-  margin-bottom: 8px;
+.ledger-header-right {
+  display: flex;
+  align-items: flex-end;
 }
 
-.gov-quad-title {
+.governance-title-main {
   font-family: var(--serif);
-  font-size: 21px;
-  font-weight: 500;
+  font-size: clamp(32px, 3.6vw, 44px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
   color: var(--ink);
-  margin: 0 0 12px;
-  line-height: 1.25;
+  margin: 0;
+}
+
+.governance-title-main em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.governance-desc-main {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0;
+}
+
+.governance-spec-ledger {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(13, 19, 31, 0.04);
+}
+
+.ledger-row {
+  display: grid;
+  grid-template-columns: 60px 240px 1fr 180px;
+  gap: 32px;
+  align-items: center;
+  padding: 30px 36px;
+  border-bottom: 1px solid var(--line);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.ledger-row:last-child {
+  border-bottom: none;
+}
+
+.ledger-row:hover {
+  background: #fafaf9;
+}
+
+.ledger-cell-num {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold);
   letter-spacing: -0.02em;
 }
 
-.gov-quad-desc {
-  font-size: 14px;
+.ledger-cell-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ledger-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.ledger-heading {
+  font-family: var(--serif);
+  font-size: 17.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.ledger-cell-desc {
+  font-size: 13.5px;
   line-height: 1.7;
   color: var(--muted);
-  margin: 0 0 20px;
 }
 
-.gov-quad-tags {
+.ledger-cell-badge {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.gov-tag-item {
+.ledger-badge-pill {
   display: inline-flex;
   align-items: center;
   font-size: 11px;
   font-weight: 600;
-  padding: 5px 12px;
+  padding: 6px 14px;
   background: #fbfbfa;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   color: var(--ink);
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-.gov-quad-cell:hover .gov-tag-item {
+.ledger-row:hover .ledger-badge-pill {
   border-color: #d1d5db;
   background: #ffffff;
 }
@@ -4609,17 +4615,20 @@ body {
 
 
 
-  .governance-monolith-strip {
-    grid-template-columns: repeat(2, 1fr);
+  .governance-ledger-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .gov-strip-item:nth-child(2) {
-    border-right: none;
+  .ledger-row {
+    grid-template-columns: 50px 200px 1fr;
+    gap: 24px;
+    padding: 26px 24px;
   }
 
-  .gov-strip-item:nth-child(1),
-  .gov-strip-item:nth-child(2) {
-    border-bottom: 1px solid var(--line);
+  .ledger-cell-badge {
+    grid-column: 2 / -1;
+    justify-content: flex-start;
   }
 
   .differentiators-grid {
@@ -5144,21 +5153,28 @@ body {
     padding: 64px 0 72px;
   }
 
-  .governance-quad-matrix {
+  .governance-ledger-header {
     grid-template-columns: 1fr;
-    margin-top: 36px;
-  }
-
-  .gov-quad-cell {
-    grid-template-columns: 36px 1fr;
     gap: 16px;
-    padding: 28px 20px;
-    border-right: none !important;
-    border-bottom: 1px solid var(--line) !important;
+    margin-bottom: 32px;
   }
 
-  .gov-quad-cell:last-child {
-    border-bottom: none !important;
+  .governance-title-main {
+    font-size: 30px;
+  }
+
+  .ledger-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 24px 20px;
+  }
+
+  .ledger-cell-num {
+    font-size: 20px;
+  }
+
+  .ledger-cell-badge {
+    justify-content: flex-start;
   }
 
   .about-differentiators-section {
