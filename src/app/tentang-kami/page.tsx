@@ -28,7 +28,7 @@ export default function AboutPage() {
             fill
             loading="eager"
             priority
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, 48vw"
             alt="Arsitektur Monumental RPK Law Office"
             className="hero-bg-image"
           />
@@ -79,20 +79,7 @@ export default function AboutPage() {
       {/* 2. Executive Leadership & Partner Statement — Clean Compact Editorial Split */}
       <section className="section about-editorial-split about-partner-editorial">
         <Container>
-          <div className="about-split-grid">
-            <div className="about-split-quote">
-              <Eyebrow>Pernyataan Managing Partner</Eyebrow>
-              <blockquote>
-                “Tidak ada ruang untuk spekulasi dalam nasihat hukum. Setiap langkah harus berpijak pada fondasi yuridis yang kokoh dan relevansi komersial yang nyata.”
-              </blockquote>
-              <p>
-                Kami mendampingi setiap keputusan strategis Anda melalui analisis cermat, komunikasi terbuka, dan kepastian hukum yang teruji.
-              </p>
-              <TextLink href={`/tim/${managingPartner.slug}`}>
-                Profil &amp; Rekam Jejak {managingPartner.fullName}
-              </TextLink>
-            </div>
-
+          <div className="about-partner-layout">
             <div className="about-split-media">
               <div className="media-frame">
                 <Image
@@ -108,6 +95,31 @@ export default function AboutPage() {
                   <span>{managingPartner.fullName} · Managing Partner</span>
                 </div>
               </div>
+            </div>
+
+            <div className="about-partner-statement">
+              <Eyebrow>Pernyataan Managing Partner</Eyebrow>
+              <blockquote>
+                “Nasihat hukum yang kuat berpijak pada dasar yuridis yang kokoh dan memahami realitas komersial klien.”
+              </blockquote>
+              <p className="partner-statement-copy">
+                Kami mendampingi setiap keputusan strategis melalui analisis yang cermat, komunikasi terbuka, dan pilihan langkah yang dapat dipertanggungjawabkan.
+              </p>
+
+              <div className="partner-statement-meta">
+                <div>
+                  <span>Managing Partner</span>
+                  <strong>{managingPartner.fullName}</strong>
+                </div>
+                <div>
+                  <span>Fokus Pendampingan</span>
+                  <strong>{managingPartner.practiceAreas.slice(0, 2).join(" · ")}</strong>
+                </div>
+              </div>
+
+              <TextLink href={`/tim/${managingPartner.slug}`}>
+                Lihat Profil &amp; Rekam Jejak
+              </TextLink>
             </div>
           </div>
         </Container>

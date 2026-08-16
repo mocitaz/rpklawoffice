@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
-import { Container, Breadcrumb } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { ConsultationCTA } from "@/components/consultation-cta";
 import { team } from "@/data/team";
 
@@ -16,14 +16,7 @@ export default function TeamPage() {
   return (
     <>
       <section className="team-directory-hero">
-        <Container>
-          <Breadcrumb
-            items={[
-              { label: "Beranda", href: "/" },
-              { label: "Tim Kami" },
-            ]}
-          />
-
+        <Container className="team-hero-layout">
           <div className="team-hero-header">
             <span className="team-kicker">ADVOKAT &amp; PARTNER FIRMA</span>
             <h1 className="team-main-heading">
@@ -32,6 +25,30 @@ export default function TeamPage() {
             <p className="team-hero-desc">
               Tim advokat RPK Law Office memadukan ketajaman analisis yuridis dengan pemahaman komersial untuk mendampingi setiap kebutuhan dan melindungi kepentingan hukum klien.
             </p>
+
+            <div className="team-hero-signals" aria-label="Ringkasan tim">
+              <span><strong>03</strong> Advokat &amp; Partner</span>
+              <span><strong>01</strong> Partner-Led Strategy</span>
+            </div>
+          </div>
+
+          <div className="team-hero-collage" aria-label="Portrait tim RPK Law Office">
+            {[team[1], team[0], team[2]].map((member, index) => (
+              <Link
+                key={member.slug}
+                href={`/tim/${member.slug}`}
+                className={`team-hero-portrait portrait-${index + 1}`}
+                aria-label={`Lihat profil ${member.fullName}`}
+              >
+                <Image
+                  src={member.portrait}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 31vw, 16vw"
+                />
+                <span>{index === 0 ? "02" : index === 1 ? "01" : "03"}</span>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>

@@ -66,7 +66,10 @@ export function ContactForm() {
 
       {/* Row 1: Identitas */}
       <div className="form-block">
-        <label className="block-title">01. DATA PEMOHON / KLIEN</label>
+        <div className="block-title">
+          <span>01</span>
+          <strong>Data Pemohon / Klien</strong>
+        </div>
         <div className="form-input-grid">
           <div className="input-field">
             <label htmlFor="c-name">Nama Lengkap *</label>
@@ -116,13 +119,17 @@ export function ContactForm() {
 
       {/* Row 2: Bidang Masalah */}
       <div className="form-block">
-        <label className="block-title">02. FOKUS AREA HUKUM &amp; PREFERENSI SESI</label>
+        <div className="block-title">
+          <span>02</span>
+          <strong>Fokus Area Hukum &amp; Preferensi Sesi</strong>
+        </div>
         <div className="area-pill-row">
           {practiceOptions.map((area) => (
             <button
               type="button"
               key={area}
               className={`area-pill ${selectedArea === area ? "selected" : ""}`}
+              aria-pressed={selectedArea === area}
               onClick={() => setSelectedArea(area)}
             >
               {area}
@@ -135,6 +142,7 @@ export function ContactForm() {
           <button
             type="button"
             className={`session-card ${sessionType === "tatap-muka" ? "active" : ""}`}
+            aria-pressed={sessionType === "tatap-muka"}
             onClick={() => setSessionType("tatap-muka")}
           >
             <strong>Tatap Muka Terjadwal</strong>
@@ -143,6 +151,7 @@ export function ContactForm() {
           <button
             type="button"
             className={`session-card ${sessionType === "online" ? "active" : ""}`}
+            aria-pressed={sessionType === "online"}
             onClick={() => setSessionType("online")}
           >
             <strong>Konsultasi Daring (Video Call)</strong>
@@ -154,7 +163,10 @@ export function ContactForm() {
 
       {/* Row 3: Ringkasan Pokok */}
       <div className="form-block">
-        <label className="block-title">03. RINGKASAN PERSOALAN</label>
+        <div className="block-title">
+          <span>03</span>
+          <strong>Ringkasan Persoalan</strong>
+        </div>
         <div className="input-field full-width">
           <label htmlFor="c-message">Uraian Pokok Masalah / Dokumen yang Dimiliki *</label>
           <textarea

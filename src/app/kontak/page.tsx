@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone, Clock, MessageSquare, ArrowUpRight, ShieldCheck } from "lucide-react";
-import { Container, Breadcrumb } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { ContactForm } from "@/components/contact-form";
 import { siteConfig } from "@/data/site";
 
@@ -16,14 +17,18 @@ export default function ContactPage() {
     <>
       {/* 1. Header Hero */}
       <section className="contact-editorial-header">
-        <Container>
-          <Breadcrumb
-            items={[
-              { label: "Beranda", href: "/" },
-              { label: "Kontak & Konsultasi" },
-            ]}
+        <div className="contact-hero-media" aria-hidden="true">
+          <Image
+            src="/images/office/boardroom.png"
+            alt=""
+            fill
+            preload
+            sizes="100vw"
           />
+        </div>
+        <div className="contact-hero-overlay" aria-hidden="true" />
 
+        <Container className="contact-hero-shell">
           <div className="contact-hero-content">
             <span className="contact-kicker-tag">KONSULTASI &amp; KORESPONDENSI FIRMA</span>
             <h1 className="contact-main-title">
@@ -99,6 +104,36 @@ export default function ContactPage() {
       <section className="section contact-intake-section">
         <Container>
           <div className="intake-section-wrapper">
+            <aside className="intake-editorial-aside">
+              <span className="intake-aside-kicker">PRIVATE CLIENT INTAKE</span>
+              <h2>Persiapan awal untuk konsultasi yang lebih efektif.</h2>
+              <p>
+                Informasi awal membantu tim kami memahami konteks, menentukan bidang penanganan, dan menyiapkan arah diskusi sebelum sesi dimulai.
+              </p>
+
+              <div className="intake-guidance-list">
+                <div>
+                  <span>01</span>
+                  <p>Lengkapi identitas dan kanal komunikasi yang dapat dihubungi.</p>
+                </div>
+                <div>
+                  <span>02</span>
+                  <p>Pilih fokus hukum serta format konsultasi yang paling sesuai.</p>
+                </div>
+                <div>
+                  <span>03</span>
+                  <p>Sampaikan kronologi singkat dan dokumen yang telah tersedia.</p>
+                </div>
+              </div>
+
+              <div className="intake-confidentiality-note">
+                <ShieldCheck size={18} />
+                <div>
+                  <strong>Kerahasiaan sejak kontak pertama</strong>
+                  <span>Informasi awal diperlakukan secara terbatas dan profesional.</span>
+                </div>
+              </div>
+            </aside>
             <ContactForm />
           </div>
         </Container>
