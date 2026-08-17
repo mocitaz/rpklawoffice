@@ -1,6 +1,6 @@
-# RAF Law Office Website
+# RPK Law Office Website
 
-Website company profile RAF Law Office dibangun menggunakan Next.js App Router, React, TypeScript, dan Tailwind CSS. Konten dummy dipisahkan dari komponen agar mudah diganti setelah data resmi tersedia.
+Website company profile RPK Law Office dibangun menggunakan Next.js App Router, React, TypeScript, dan Vanilla/Modern CSS.
 
 ## Menjalankan proyek
 

@@ -17,7 +17,7 @@ export type TeamMember = {
 
 /**
  * IMPORTANT CONTENT STATUS
- * Names and academic titles are supplied RAF Law Office data.
+ * Names and academic titles are supplied RPK Law Office data.
  * Every other profile field below—including roles, portraits, biography, education,
  * experience, areas, languages, qualifications, and email—is placeholder content.
  * Replace only here to update every team surface across the site.
@@ -30,13 +30,13 @@ export const team: TeamMember[] = [
     portrait: "/images/team/fajar-profile.png",
     shortBio: "Mendukung penanganan kebutuhan litigasi perdata, isu properti, dan legal advisory melalui riset serta penelaahan yang cermat.",
     biography: [
-      "Muhamad Fajar Roni merupakan bagian dari RAF Law Office dengan area pendampingan sementara pada litigasi perdata, properti, dan kebutuhan legal advisory bagi klien.",
+      "Muhamad Fajar Roni merupakan Managing Partner RPK Law Office dengan area pendampingan pada litigasi perdata, properti, dan kebutuhan legal advisory bagi klien.",
       "Pendekatannya menekankan ketelitian dalam menelaah fakta, dokumen, dan kerangka hukum agar setiap rekomendasi memiliki dasar yang jelas dan dapat dipahami.",
       "Informasi mengenai riwayat pendidikan, pengalaman profesional, dan keanggotaan akan diperbarui setelah data resmi diterima.",
     ],
     practiceAreas: ["Litigasi Perdata", "Properti & Real Estat", "Legal Advisory"],
     languages: ["Indonesia"], // PLACEHOLDER
-    email: "fajar@placeholder.raflawoffice.com",
+    email: "fajar@rpklawoffice.com",
     education: [{ degree: "Sarjana Hukum (S.H.)", institution: "Informasi institusi akan diperbarui." }],
     experience: [
       { title: "Pendampingan Litigasi", description: "Dukungan penelaahan dan persiapan terhadap berbagai kebutuhan dalam proses sengketa perdata." },
@@ -47,7 +47,7 @@ export const team: TeamMember[] = [
     timeline: [
       { year: "Data", title: "Pendidikan Hukum", description: "Institusi dan periode pendidikan akan diperbarui." },
       { year: "Data", title: "Pengalaman Profesional", description: "Posisi, organisasi, dan periode akan diperbarui." },
-      { year: "Kini", title: "RAF Law Office", description: "Jabatan dan deskripsi peran menunggu konfirmasi." },
+      { year: "Kini", title: "RPK Law Office", description: "Managing Partner." },
     ],
     relatedInsights: ["persiapan-perusahaan-menghadapi-sengketa", "risiko-sebelum-menandatangani-kontrak"],
   },
@@ -58,13 +58,13 @@ export const team: TeamMember[] = [
     portrait: "/images/team/anggara.png", // PLACEHOLDER portrait.
     shortBio: "Mendampingi kebutuhan hukum korporasi dan penyelesaian sengketa dengan pendekatan yang terukur, komunikatif, dan berorientasi pada konteks klien.",
     biography: [
-      "M. Anggara Putra merupakan bagian dari RAF Law Office dengan fokus sementara pada berbagai kebutuhan hukum yang berkaitan dengan aktivitas usaha, penyelesaian sengketa, dan pendampingan strategis bagi individu maupun badan usaha.",
+      "M. Anggara Putra merupakan Partner RPK Law Office dengan fokus pada berbagai kebutuhan hukum yang berkaitan dengan aktivitas usaha, penyelesaian sengketa, dan pendampingan strategis bagi individu maupun badan usaha.",
       "Dalam setiap pendampingan, pendekatan yang digunakan dimulai dari pemahaman atas konteks, tujuan, dan profil risiko klien. Proses tersebut menjadi dasar untuk menyusun analisis serta pilihan langkah hukum yang relevan.",
       "Informasi rinci mengenai pengalaman profesional dan portofolio perkara akan diperbarui setelah data terverifikasi tersedia.",
     ],
     practiceAreas: ["Hukum Korporasi & Komersial", "Penyelesaian Sengketa", "Litigasi Perdata", "Penyusunan & Review Kontrak"],
     languages: ["Indonesia", "Inggris"], // PLACEHOLDER
-    email: "anggara@placeholder.raflawoffice.com",
+    email: "anggara@rpklawoffice.com",
     education: [
       { degree: "Sarjana Hukum (S.H.)", institution: "Informasi institusi akan diperbarui." },
       { degree: "Magister Hukum (M.H.)", institution: "Informasi institusi akan diperbarui." },
@@ -78,7 +78,7 @@ export const team: TeamMember[] = [
     timeline: [
       { year: "Data", title: "Pendidikan Hukum", description: "Institusi dan periode pendidikan akan diperbarui." },
       { year: "Data", title: "Pengalaman Profesional", description: "Posisi, organisasi, dan periode akan diperbarui." },
-      { year: "Kini", title: "RAF Law Office", description: "Jabatan dan deskripsi peran menunggu konfirmasi." },
+      { year: "Kini", title: "RPK Law Office", description: "Partner." },
     ],
     relatedInsights: ["memahami-klausul-perjanjian-komersial", "risiko-sebelum-menandatangani-kontrak", "persiapan-perusahaan-menghadapi-sengketa"],
   },
@@ -96,7 +96,7 @@ export const team: TeamMember[] = [
     ],
     practiceAreas: ["Hukum Korporasi & Komersial", "Penyusunan & Review Kontrak", "Penyelesaian Sengketa"],
     languages: ["Indonesia"], // PLACEHOLDER
-    email: "reza@placeholder.raflawoffice.com",
+    email: "reza@rpklawoffice.com",
     education: [
       { degree: "Sarjana Hukum (S.H.)", institution: "Fakultas Hukum, Universitas di Bandung" },
       { degree: "Pendidikan Profesi Advokat", institution: "Program Profesi Advokat Indonesia" },
@@ -114,7 +114,7 @@ export const team: TeamMember[] = [
     timeline: [
       { year: "Data", title: "Pendidikan Hukum", description: "Institusi dan periode pendidikan akan diperbarui." },
       { year: "Data", title: "Pengalaman Profesional", description: "Posisi, organisasi, dan periode akan diperbarui." },
-      { year: "Kini", title: "RAF Law Office", description: "Jabatan dan deskripsi peran menunggu konfirmasi." },
+      { year: "Kini", title: "RPK Law Office", description: "Partner." },
     ],
     relatedInsights: ["risiko-sebelum-menandatangani-kontrak", "memahami-klausul-perjanjian-komersial"],
   },

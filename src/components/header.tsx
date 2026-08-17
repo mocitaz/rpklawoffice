@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Logo } from "./logo";
-import { navigation } from "@/data/site";
+import { navigation, siteConfig } from "@/data/site";
 
 export function Header() {
   const pathname = usePathname();
@@ -24,7 +24,7 @@ export function Header() {
       </div>
       <div className={`mobile-panel ${open ? "open" : ""}`} aria-hidden={!open}>
         <nav aria-label="Navigasi seluler">{navigation.map((item, index) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)}><span>0{index + 1}</span>{item.label}</Link>)}</nav>
-        <div className="mobile-contact"><p>Konsultasi & Informasi</p><Link href="mailto:contact@raflawoffice.com">contact@raflawoffice.com</Link></div>
+        <div className="mobile-contact"><p>Konsultasi & Informasi</p><Link href={`mailto:${siteConfig.email}`}>{siteConfig.email}</Link></div>
       </div>
     </header>
   );

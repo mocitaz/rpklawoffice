@@ -11,11 +11,11 @@ import { WhatsAppButton } from "@/components/whatsapp-button";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.raflawoffice.com"),
-  title: { default: "RAF Law Office | Kantor Hukum & Konsultan Hukum", template: "%s | RAF Law Office" },
+  metadataBase: new URL("https://rpklawoffice.com"),
+  title: { default: "RPK Law Office | Kantor Hukum & Konsultan Hukum", template: "%s | RPK Law Office" },
   description: siteConfig.description,
-  openGraph: { title: "RAF Law Office", description: siteConfig.description, type: "website", locale: "id_ID", images: [siteConfig.images.hero] },
-  twitter: { card: "summary_large_image", title: "RAF Law Office", description: siteConfig.description },
+  openGraph: { title: "RPK Law Office", description: siteConfig.description, type: "website", locale: "id_ID", images: [siteConfig.images.hero] },
+  twitter: { card: "summary_large_image", title: "RPK Law Office", description: siteConfig.description },
 };
 
 const schema = { "@context": "https://schema.org", "@type": "LegalService", name: siteConfig.name, description: siteConfig.description, email: siteConfig.email, telephone: siteConfig.phone, address: { "@type": "PostalAddress", streetAddress: siteConfig.address[0], addressLocality: "Bandung", addressRegion: "Jawa Barat", addressCountry: "ID" } };
