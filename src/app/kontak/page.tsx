@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "Kontak & Konsultasi Pengacara Bandung",
   description:
-    "Jadwalkan konsultasi hukum profesional bersama advokat partner RPK Law Office di Bandung. Layanan tatap muka dan telekonferensi aman.",
+    "Jadwalkan konsultasi hukum profesional bersama advokat partner RPK Law Firm di Bandung. Layanan tatap muka dan telekonferensi aman.",
   keywords: [
     "konsultasi pengacara bandung",
     "hubungi lawyer bandung",
@@ -42,7 +42,7 @@ export default function ContactPage() {
               Mulai Komunikasi yang <em>Jelas &amp; Terarah.</em>
             </h1>
             <p className="contact-lead-text">
-              Pintu masuk resmi untuk mendiskusikan persoalan hukum, mitigasi risiko bisnis, atau penyelesaian sengketa bersama tim advokat RPK Law Office.
+              Pintu masuk resmi untuk mendiskusikan persoalan hukum, mitigasi risiko bisnis, atau penyelesaian sengketa bersama tim advokat RPK Law Firm.
             </p>
           </div>
 
@@ -160,7 +160,7 @@ export default function ContactPage() {
                 <MapPin size={20} />
               </div>
               <span className="office-card-label">DOMISILI &amp; KANTOR</span>
-              <h3 className="office-card-name">RPK Law Office</h3>
+              <h3 className="office-card-name">RPK Law Firm</h3>
               <p className="office-card-text">{siteConfig.address.join(" · ")}</p>
               <span className="office-card-meta">Kunjungan tatap muka diselenggarakan dengan jadwal terkonfirmasi.</span>
             </div>

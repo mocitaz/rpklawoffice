@@ -33,7 +33,7 @@ export function ContactForm() {
         </div>
         <h3 className="success-heading">Permintaan Konsultasi Diterima</h3>
         <p className="success-desc">
-          Terima kasih telah menghubungi RPK Law Office. Tim advokat kami akan menelaah ringkasan perkara Anda dan menghubungi kembali via WhatsApp/Email dalam 1x24 jam kerja.
+          Terima kasih telah menghubungi RPK Law Firm. Tim advokat kami akan menelaah ringkasan perkara Anda dan menghubungi kembali via WhatsApp/Email dalam 1x24 jam kerja.
         </p>
         <div className="success-demo-box">
           <span>Mode Demonstrasi Antarmuka</span>
@@ -183,7 +183,7 @@ export function ContactForm() {
       <label className="form-checkbox-row">
         <input type="checkbox" required />
         <span>
-          Saya menyetujui bahwa informasi ini dikirimkan untuk permohonan konsultasi awal dan dilindungi standar kerahasiaan profesi advokat RPK Law Office.
+          Saya menyetujui bahwa informasi ini dikirimkan untuk permohonan konsultasi awal dan dilindungi standar kerahasiaan profesi advokat RPK Law Firm.
         </span>
       </label>
 

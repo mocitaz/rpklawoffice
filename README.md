@@ -1,6 +1,6 @@
-# RPK Law Office Website
+# RPK Law Firm Website
 
-Website company profile RPK Law Office dibangun menggunakan Next.js App Router, React, TypeScript, dan Vanilla/Modern CSS.
+Website company profile RPK Law Firm dibangun menggunakan Next.js App Router, React, TypeScript, dan Vanilla/Modern CSS.
 
 ## Menjalankan proyek
 

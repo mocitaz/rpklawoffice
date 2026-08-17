@@ -1,4 +1,4 @@
-# RPK Law Office — Content Replacement Checklist
+# RPK Law Firm — Content Replacement Checklist
 
 Semua item berikut harus dikonfirmasi sebelum website dipublikasikan. Nama dan gelar ketiga anggota tim telah diberikan dan **bukan placeholder**.
 

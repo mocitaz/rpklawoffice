@@ -12,7 +12,7 @@ import { team } from "@/data/team";
 export const metadata: Metadata = {
   title: "Tentang Kami — Kantor Advokat & Pengacara Bandung",
   description:
-    "Profil kelembagaan, kepemimpinan partner, integritas advokat PERADI, dan metodologi advokasi hukum terpercaya RPK Law Office di Bandung, Jawa Barat.",
+    "Profil kelembagaan, kepemimpinan partner, integritas advokat PERADI, dan metodologi advokasi hukum terpercaya RPK Law Firm di Bandung, Jawa Barat.",
   keywords: [
     "tentang rpk law office",
     "kantor advokat bandung",
@@ -36,7 +36,7 @@ export default function AboutPage() {
             loading="eager"
             priority
             sizes="(max-width: 768px) 100vw, 48vw"
-            alt="Arsitektur Monumental RPK Law Office"
+            alt="Arsitektur Monumental RPK Law Firm"
             className="hero-bg-image"
           />
           <div className="hero-cinematic-scrim" />
@@ -46,7 +46,7 @@ export default function AboutPage() {
           <div className="hero-lead-box">
             <div className="hero-micro-label">
               <span className="label-line" />
-              <span>RPK LAW OFFICE · TENTANG KAMI</span>
+              <span>RPK LAW FIRM · TENTANG KAMI</span>
             </div>
 
             <h1 className="hero-title-clean">
@@ -144,7 +144,7 @@ export default function AboutPage() {
             </div>
             <div className="ledger-header-right">
               <p className="governance-desc-main">
-                Standar kepatuhan kode etik profesi advokat, akuntabilitas yuridis, dan jaminan perlindungan mutlak bagi setiap klien RPK Law Office.
+                Standar kepatuhan kode etik profesi advokat, akuntabilitas yuridis, dan jaminan perlindungan mutlak bagi setiap klien RPK Law Firm.
               </p>
             </div>
           </div>

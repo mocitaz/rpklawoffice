@@ -1,11 +1,13 @@
 export const siteConfig = {
-  name: "RPK Law Office",
+  name: "RPK Law Firm",
   shortName: "RPK",
-  legalName: "Roni, Putra & Kusumah Law Office",
+  legalName: "Roni, Putra & Kusumah Law Firm",
   description:
-    "Kantor Hukum & Pengacara Bandung terpercaya. RPK (Roni, Putra & Kusumah) Law Office melayani advokasi hukum korporasi, penyelesaian sengketa bisnis, litigasi perdata, properti, dan legal advisory di Bandung, Jawa Barat & nasional.",
+    "Kantor Hukum & Pengacara Bandung terpercaya. RPK (Roni, Putra & Kusumah) Law Firm melayani advokasi hukum korporasi, penyelesaian sengketa bisnis, litigasi perdata, properti, dan legal advisory di Bandung, Jawa Barat & nasional.",
   keywords: [
     // Brand & Names
+    "rpk law firm",
+    "rpk law firm bandung",
     "rpk law office",
     "rpk law office bandung",
     "rpklawoffice.com",

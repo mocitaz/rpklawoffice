@@ -17,7 +17,7 @@ export type TeamMember = {
 
 /**
  * IMPORTANT CONTENT STATUS
- * Names and academic titles are supplied RPK Law Office data.
+ * Names and academic titles are supplied RPK Law Firm data.
  * Every other profile field below—including roles, portraits, biography, education,
  * experience, areas, languages, qualifications, and email—is placeholder content.
  * Replace only here to update every team surface across the site.
@@ -30,7 +30,7 @@ export const team: TeamMember[] = [
     portrait: "/images/team/fajar-profile.png",
     shortBio: "Mendukung penanganan kebutuhan litigasi perdata, isu properti, dan legal advisory melalui riset serta penelaahan yang cermat.",
     biography: [
-      "Muhamad Fajar Roni merupakan Managing Partner RPK Law Office dengan area pendampingan pada litigasi perdata, properti, dan kebutuhan legal advisory bagi klien.",
+      "Muhamad Fajar Roni merupakan Managing Partner RPK Law Firm dengan area pendampingan pada litigasi perdata, properti, dan kebutuhan legal advisory bagi klien.",
       "Pendekatannya menekankan ketelitian dalam menelaah fakta, dokumen, dan kerangka hukum agar setiap rekomendasi memiliki dasar yang jelas dan dapat dipahami.",
       "Informasi mengenai riwayat pendidikan, pengalaman profesional, dan keanggotaan akan diperbarui setelah data resmi diterima.",
     ],
@@ -47,7 +47,7 @@ export const team: TeamMember[] = [
     timeline: [
       { year: "Data", title: "Pendidikan Hukum", description: "Institusi dan periode pendidikan akan diperbarui." },
       { year: "Data", title: "Pengalaman Profesional", description: "Posisi, organisasi, dan periode akan diperbarui." },
-      { year: "Kini", title: "RPK Law Office", description: "Managing Partner." },
+      { year: "Kini", title: "RPK Law Firm", description: "Managing Partner." },
     ],
     relatedInsights: ["persiapan-perusahaan-menghadapi-sengketa", "risiko-sebelum-menandatangani-kontrak"],
   },
@@ -58,7 +58,7 @@ export const team: TeamMember[] = [
     portrait: "/images/team/anggara.png", // PLACEHOLDER portrait.
     shortBio: "Mendampingi kebutuhan hukum korporasi dan penyelesaian sengketa dengan pendekatan yang terukur, komunikatif, dan berorientasi pada konteks klien.",
     biography: [
-      "M. Anggara Putra merupakan Partner RPK Law Office dengan fokus pada berbagai kebutuhan hukum yang berkaitan dengan aktivitas usaha, penyelesaian sengketa, dan pendampingan strategis bagi individu maupun badan usaha.",
+      "M. Anggara Putra merupakan Partner RPK Law Firm dengan fokus pada berbagai kebutuhan hukum yang berkaitan dengan aktivitas usaha, penyelesaian sengketa, dan pendampingan strategis bagi individu maupun badan usaha.",
       "Dalam setiap pendampingan, pendekatan yang digunakan dimulai dari pemahaman atas konteks, tujuan, dan profil risiko klien. Proses tersebut menjadi dasar untuk menyusun analisis serta pilihan langkah hukum yang relevan.",
       "Informasi rinci mengenai pengalaman profesional dan portofolio perkara akan diperbarui setelah data terverifikasi tersedia.",
     ],
@@ -78,7 +78,7 @@ export const team: TeamMember[] = [
     timeline: [
       { year: "Data", title: "Pendidikan Hukum", description: "Institusi dan periode pendidikan akan diperbarui." },
       { year: "Data", title: "Pengalaman Profesional", description: "Posisi, organisasi, dan periode akan diperbarui." },
-      { year: "Kini", title: "RPK Law Office", description: "Partner." },
+      { year: "Kini", title: "RPK Law Firm", description: "Partner." },
     ],
     relatedInsights: ["memahami-klausul-perjanjian-komersial", "risiko-sebelum-menandatangani-kontrak", "persiapan-perusahaan-menghadapi-sengketa"],
   },
@@ -90,7 +90,7 @@ export const team: TeamMember[] = [
     shortBio: "Berfokus pada kebutuhan komersial, penyusunan kontrak, dan pendampingan sengketa dengan analisis yang sistematis dan praktis.",
     // DEMO CONTENT: replace with verified partner profile data before publication.
     biography: [
-      "Reza Evaldo Kusumah adalah Partner di RPK Law Office yang berfokus pada hukum korporasi dan komersial, penyusunan kontrak, serta penyelesaian sengketa bisnis. Ia mendampingi perusahaan dan pelaku usaha dalam menerjemahkan persoalan hukum menjadi pilihan tindakan yang jelas dan dapat dilaksanakan.",
+      "Reza Evaldo Kusumah adalah Partner di RPK Law Firm yang berfokus pada hukum korporasi dan komersial, penyusunan kontrak, serta penyelesaian sengketa bisnis. Ia mendampingi perusahaan dan pelaku usaha dalam menerjemahkan persoalan hukum menjadi pilihan tindakan yang jelas dan dapat dilaksanakan.",
       "Dalam setiap penugasan, Reza memulai proses dengan memahami tujuan komersial, struktur hubungan para pihak, dan profil risiko klien. Pendekatan tersebut menjadi dasar dalam menelaah dokumen, menguji posisi hukum, serta menyusun strategi yang proporsional.",
       "Reza dikenal melalui komunikasi yang lugas dan sistematis. Setiap rekomendasi disampaikan bersama pertimbangan risiko, alternatif langkah, dan implikasi praktis agar klien dapat mengambil keputusan dengan pemahaman yang utuh.",
     ],
@@ -114,7 +114,7 @@ export const team: TeamMember[] = [
     timeline: [
       { year: "Data", title: "Pendidikan Hukum", description: "Institusi dan periode pendidikan akan diperbarui." },
       { year: "Data", title: "Pengalaman Profesional", description: "Posisi, organisasi, dan periode akan diperbarui." },
-      { year: "Kini", title: "RPK Law Office", description: "Partner." },
+      { year: "Kini", title: "RPK Law Firm", description: "Partner." },
     ],
     relatedInsights: ["risiko-sebelum-menandatangani-kontrak", "memahami-klausul-perjanjian-komersial"],
   },

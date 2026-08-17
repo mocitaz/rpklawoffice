@@ -18,7 +18,7 @@ export function ConsultationCTA() {
 
             <div className="simple-detail">
               <p className="simple-lead">
-                Diskusikan konteks dan kebutuhan hukum Anda bersama RPK Law Office. Kami membantu memetakan langkah awal yang relevan, terukur, dan berorientasi pada kepastian.
+                Diskusikan konteks dan kebutuhan hukum Anda bersama RPK Law Firm. Kami membantu memetakan langkah awal yang relevan, terukur, dan berorientasi pada kepastian.
               </p>
 
               <div className="simple-actions">
@@ -27,7 +27,7 @@ export function ConsultationCTA() {
                   <ArrowRight size={14} />
                 </Link>
                 <Link
-                  href={`https://wa.me/${siteConfig.whatsappNumber}?text=Halo%20RPK%20Law%20Office,%20saya%20ingin%20berkonsultasi.`}
+                  href={`https://wa.me/${siteConfig.whatsappNumber}?text=Halo%20RPK%20Law%20Firm,%20saya%20ingin%20berkonsultasi.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="simple-btn-secondary"

@@ -33,13 +33,14 @@ export async function generateMetadata({
   return member
     ? {
         title: `${member.fullName} — ${member.role} Pengacara Bandung`,
-        description: `Profil profesional ${member.fullName}, ${member.role} di RPK Law Office Bandung. ${member.shortBio}`,
+        description: `Profil profesional ${member.fullName}, ${member.role} di RPK Law Firm Bandung. ${member.shortBio}`,
         keywords: [
           member.fullName.toLowerCase(),
           `${member.fullName.toLowerCase()} pengacara`,
           `${member.fullName.toLowerCase()} advokat`,
           "pengacara bandung",
           "advokat bandung",
+          "rpk law firm",
           "rpk law office",
         ],
       }
@@ -98,7 +99,7 @@ export default async function ProfilePage({
             <h1>{member.fullName}</h1>
             <div className="profile-role-line">
               <strong>{member.role}</strong>
-              <span>RPK Law Office · Bandung</span>
+              <span>RPK Law Firm · Bandung</span>
             </div>
 
             <p className="profile-cv-lead">{member.shortBio}</p>
@@ -161,7 +162,7 @@ export default async function ProfilePage({
             </div>
             <p>
               Ringkasan kompetensi, pendekatan, dan lingkup pendampingan profesional{" "}
-              {member.fullName.split(",")[0]} di RPK Law Office.
+              {member.fullName.split(",")[0]} di RPK Law Firm.
             </p>
           </header>
 
@@ -293,7 +294,7 @@ export default async function ProfilePage({
                       ))
                     ) : (
                       <p className="profile-credential-note">
-                        Informasi kredensial profesional dapat dikonfirmasi melalui RPK Law Office.
+                        Informasi kredensial profesional dapat dikonfirmasi melalui RPK Law Firm.
                       </p>
                     )}
                   </div>

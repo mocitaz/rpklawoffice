@@ -14,7 +14,7 @@ export default function Home() {
       <section className="modern-hero">
         <Container>
           <div className="modern-hero-copy">
-            <span className="section-label">RPK Law Office · Bandung</span>
+            <span className="section-label">RPK Law Firm · Bandung</span>
             <h1>Pendampingan hukum untuk keputusan yang lebih tepat.</h1>
             <div className="modern-hero-support">
               <p>Analisis yang cermat, komunikasi yang jelas, dan strategi yang disusun sesuai konteks setiap klien.</p>
@@ -26,7 +26,7 @@ export default function Home() {
           </div>
           <div className="modern-hero-media">
             <Image src={siteConfig.images.hero} fill loading="eager" fetchPriority="high" sizes="(max-width: 768px) 100vw, 1240px" alt="Arsitektur kantor modern" />
-            <div className="modern-hero-caption"><span>Roni, Putra & Kusumah</span><span>Law Office</span></div>
+            <div className="modern-hero-caption"><span>Roni, Putra & Kusumah</span><span>Law Firm</span></div>
           </div>
         </Container>
       </section>
@@ -39,7 +39,7 @@ export default function Home() {
               <span className="section-label">Tentang Firma</span>
               <h2>Persoalan hukum membutuhkan arah yang jelas, bukan jawaban yang terburu-buru.</h2>
               <p>Kami memulai setiap pendampingan dengan memahami fakta, kepentingan, dan risiko secara menyeluruh. Dari sana, kami membantu klien melihat pilihan dan menentukan langkah yang paling relevan.</p>
-              <TextLink href="/tentang-kami">Mengenal RPK Law Office</TextLink>
+              <TextLink href="/tentang-kami">Mengenal RPK Law Firm</TextLink>
             </div>
           </div>
         </Container>
