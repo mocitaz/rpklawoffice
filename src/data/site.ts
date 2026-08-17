@@ -1,10 +1,9 @@
-// TODO: Replace all placeholder firm and contact details with verified RAF Law Office data.
 export const siteConfig = {
-  name: "RAF Law Office",
-  shortName: "RAF",
+  name: "RPK Law Office",
+  shortName: "RPK",
   description:
-    "RAF Law Office memberikan layanan dan pendampingan hukum bagi individu, bisnis, dan perusahaan dengan pendekatan yang strategis, profesional, dan terpercaya.",
-  email: "contact@raflawoffice.com",
+    "RPK Law Office memberikan layanan dan pendampingan hukum bagi individu, bisnis, dan perusahaan dengan pendekatan yang strategis, profesional, dan terpercaya.",
+  email: "contact@rpklawoffice.com",
   phone: "+62 22 555 1234",
   whatsappDisplay: "+62 812 3456 7890",
   whatsappNumber: "6281234567890",
