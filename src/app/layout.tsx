@@ -12,13 +12,128 @@ import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rpklawoffice.com"),
-  title: { default: "RPK Law Office | Kantor Hukum & Konsultan Hukum", template: "%s | RPK Law Office" },
+  title: {
+    default: "RPK Law Office | Kantor Hukum & Pengacara Bandung",
+    template: "%s | RPK Law Office Bandung",
+  },
   description: siteConfig.description,
-  openGraph: { title: "RPK Law Office", description: siteConfig.description, type: "website", locale: "id_ID", images: [siteConfig.images.hero] },
-  twitter: { card: "summary_large_image", title: "RPK Law Office", description: siteConfig.description },
+  keywords: siteConfig.keywords,
+  authors: [{ name: "RPK Law Office" }],
+  creator: "RPK Law Office",
+  publisher: "RPK Law Office",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rpklawoffice.com",
+  },
+  openGraph: {
+    title: "RPK Law Office | Kantor Pengacara & Konsultan Hukum Bandung",
+    description: siteConfig.description,
+    url: "https://rpklawoffice.com",
+    siteName: "RPK Law Office",
+    locale: "id_ID",
+    type: "website",
+    images: [
+      {
+        url: "/images/about/monument.jpg",
+        width: 1200,
+        height: 630,
+        alt: "RPK Law Office - Kantor Pengacara & Konsultan Hukum Bandung",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RPK Law Office | Kantor Pengacara & Konsultan Hukum Bandung",
+    description: siteConfig.description,
+    images: ["/images/about/monument.jpg"],
+  },
 };
 
-const schema = { "@context": "https://schema.org", "@type": "LegalService", name: siteConfig.name, description: siteConfig.description, email: siteConfig.email, telephone: siteConfig.phone, address: { "@type": "PostalAddress", streetAddress: siteConfig.address[0], addressLocality: "Bandung", addressRegion: "Jawa Barat", addressCountry: "ID" } };
+const schema = {
+  "@context": "https://schema.org",
+  "@type": ["LegalService", "Attorney", "ProfessionalService"],
+  "@id": "https://rpklawoffice.com/#organization",
+  name: "RPK Law Office",
+  alternateName: ["Roni, Putra & Kusumah Law Office", "Kantor Pengacara Bandung RPK", "RPK Lawyer Bandung"],
+  legalName: "Roni, Putra & Kusumah Law Office",
+  url: "https://rpklawoffice.com",
+  logo: "https://rpklawoffice.com/images/brand/rpk-logo-light.png",
+  image: "https://rpklawoffice.com/images/about/monument.jpg",
+  description: siteConfig.description,
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  priceRange: "$$",
+  currenciesAccepted: "IDR",
+  paymentAccepted: "Cash, Credit Card, Bank Transfer",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Bandung",
+    addressLocality: "Bandung",
+    addressRegion: "Jawa Barat",
+    postalCode: "40115",
+    addressCountry: "ID",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -6.917464,
+    longitude: 107.619123,
+  },
+  areaServed: [
+    { "@type": "City", name: "Bandung" },
+    { "@type": "AdministrativeArea", name: "Jawa Barat" },
+    { "@type": "Country", name: "Indonesia" },
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "17:00",
+    },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Layanan Hukum & Advokasi RPK Law Office",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Hukum Korporasi & Komersial Bandung" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Penyelesaian Sengketa & Mediasi Bandung" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Litigasi Perdata Pengadilan Negeri & Tinggi" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Hukum Properti & Real Estat Bandung" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Hukum Ketenagakerjaan & Hubungan Industrial" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Penyusunan & Legal Review Kontrak Bisnis" } },
+    ],
+  },
+  founder: [
+    {
+      "@type": "Person",
+      name: "Muhamad Fajar Roni, S.H.",
+      jobTitle: "Managing Partner",
+      alumniOf: "Fakultas Hukum",
+    },
+    {
+      "@type": "Person",
+      name: "M. Anggara Putra, S.H., M.H.",
+      jobTitle: "Partner",
+      alumniOf: "Fakultas Hukum",
+    },
+    {
+      "@type": "Person",
+      name: "Reza Evaldo Kusumah, S.H.",
+      jobTitle: "Partner",
+      alumniOf: "Fakultas Hukum",
+    },
+  ],
+};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="id" data-scroll-behavior="smooth"><body><a href="#main" className="skip-link">Lewati ke konten</a><Header /><main id="main">{children}</main><Footer /><WhatsAppButton /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /></body></html>;

@@ -7,9 +7,17 @@ import { ConsultationCTA } from "@/components/consultation-cta";
 import { team } from "@/data/team";
 
 export const metadata: Metadata = {
-  title: "Tim Kami — Advokat & Partner",
+  title: "Tim Advokat & Pengacara Bandung",
   description:
-    "Kenali advokat dan konsultan hukum di balik RPK Law Office yang berkomitmen memberikan pendampingan strategis dan terpercaya.",
+    "Profil Dewan Partner & Advokat RPK Law Office di Bandung: Muhamad Fajar Roni, S.H., M. Anggara Putra, S.H., M.H., dan Reza Evaldo Kusumah, S.H. Berlisensi resmi PERADI.",
+  keywords: [
+    "advokat bandung",
+    "pengacara bandung",
+    "muhamad fajar roni",
+    "m anggara putra",
+    "reza evaldo kusumah",
+    "lawyer bandung",
+  ],
 };
 
 export default function TeamPage() {

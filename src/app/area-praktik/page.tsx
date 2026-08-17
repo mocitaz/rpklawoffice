@@ -8,9 +8,16 @@ import { practiceAreas } from "@/data/practice-areas";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Area Praktik — Ruang Lingkup Layanan Hukum",
+  title: "Area Praktik — Layanan Hukum & Pengacara Bandung",
   description:
-    "Eksplorasi ruang lingkup pendampingan hukum RPK Law Office: Hukum Korporasi, Penyelesaian Sengketa, Litigasi Perdata, Ketenagakerjaan, Properti, dan Kepatuhan Regulasi.",
+    "Layanan advokasi dan pendampingan hukum terpercaya di Bandung: Hukum Korporasi, Penyelesaian Sengketa, Litigasi Perdata, Hukum Properti, Ketenagakerjaan, dan Legal Advisory.",
+  keywords: [
+    "layanan hukum bandung",
+    "pengacara perdata bandung",
+    "pengacara bisnis bandung",
+    "konsultan hukum korporasi bandung",
+    "litigasi bandung",
+  ],
 };
 
 export default function PracticesPage() {

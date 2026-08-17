@@ -10,9 +10,16 @@ import { ConsultationCTA } from "@/components/consultation-cta";
 import { team } from "@/data/team";
 
 export const metadata: Metadata = {
-  title: "Tentang Kami — Profil Firma & Manifesto Hukum",
+  title: "Tentang Kami — Kantor Advokat & Pengacara Bandung",
   description:
-    "Profil kelembagaan, kepemimpinan partner, standar integritas, dan metodologi advokasi di balik RPK Law Office.",
+    "Profil kelembagaan, kepemimpinan partner, integritas advokat PERADI, dan metodologi advokasi hukum terpercaya RPK Law Office di Bandung, Jawa Barat.",
+  keywords: [
+    "tentang rpk law office",
+    "kantor advokat bandung",
+    "pengacara bandung",
+    "law firm bandung",
+    "roni putra kusumah",
+  ],
 };
 
 export default function AboutPage() {

@@ -33,8 +33,15 @@ export async function generateMetadata({
   const area = getPracticeArea(slug);
   return area
     ? {
-        title: `${area.title} — Area Praktik`,
-        description: area.description,
+        title: `${area.title} Bandung — Advokat & Konsultan Hukum`,
+        description: `${area.description} Layanan advokasi dan pendampingan hukum di Bandung oleh RPK Law Office.`,
+        keywords: [
+          `pengacara ${area.shortTitle.toLowerCase()} bandung`,
+          `advokat ${area.shortTitle.toLowerCase()} bandung`,
+          `hukum ${area.shortTitle.toLowerCase()} bandung`,
+          "rpk law office",
+          "lawyer bandung",
+        ],
       }
     : {};
 }

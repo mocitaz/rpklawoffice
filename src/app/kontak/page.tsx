@@ -7,9 +7,16 @@ import { ContactForm } from "@/components/contact-form";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Kontak & Konsultasi",
+  title: "Kontak & Konsultasi Pengacara Bandung",
   description:
-    "Hubungi RPK Law Office untuk mendiskusikan kebutuhan pendampingan hukum, transaksi komersial, maupun sengketa perdata Anda.",
+    "Jadwalkan konsultasi hukum profesional bersama advokat partner RPK Law Office di Bandung. Layanan tatap muka dan telekonferensi aman.",
+  keywords: [
+    "konsultasi pengacara bandung",
+    "hubungi lawyer bandung",
+    "kantor advokat bandung",
+    "konsultasi hukum bandung",
+    "jadwalkan konsultasi hukum",
+  ],
 };
 
 export default function ContactPage() {

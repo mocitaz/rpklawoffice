@@ -32,8 +32,16 @@ export async function generateMetadata({
   const member = getTeamMember(slug);
   return member
     ? {
-        title: `${member.fullName} — ${member.role}`,
-        description: member.shortBio,
+        title: `${member.fullName} — ${member.role} Pengacara Bandung`,
+        description: `Profil profesional ${member.fullName}, ${member.role} di RPK Law Office Bandung. ${member.shortBio}`,
+        keywords: [
+          member.fullName.toLowerCase(),
+          `${member.fullName.toLowerCase()} pengacara`,
+          `${member.fullName.toLowerCase()} advokat`,
+          "pengacara bandung",
+          "advokat bandung",
+          "rpk law office",
+        ],
       }
     : {};
 }
