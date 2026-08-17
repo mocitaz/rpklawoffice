@@ -67,7 +67,7 @@ const schema = {
   alternateName: ["Roni, Putra & Kusumah Law Firm", "Kantor Pengacara Bandung RPK", "RPK Law Office", "RPK Lawyer Bandung"],
   legalName: "Roni, Putra & Kusumah Law Firm",
   url: "https://rpklawoffice.com",
-  logo: "https://rpklawoffice.com/images/brand/rpk-logo-light.png",
+  logo: "https://rpklawoffice.com/images/brand/rpklawfirm-white.png",
   image: "https://rpklawoffice.com/images/about/monument.jpg",
   description: siteConfig.description,
   telephone: siteConfig.phone,

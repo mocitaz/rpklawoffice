@@ -9,7 +9,7 @@ export function Logo({ light = false }: { light?: boolean }) {
       aria-label="Roni, Putra & Kusumah Law Firm — Beranda"
     >
       <Image
-        src={light ? "/images/brand/rpk-logo-light.png" : "/images/brand/rpklawfirm.png"}
+        src={light ? "/images/brand/rpklawfirm-white.png" : "/images/brand/rpklawfirm.png"}
         width={1169}
         height={516}
         sizes="(max-width: 768px) 132px, 158px"
